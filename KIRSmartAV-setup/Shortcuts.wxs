@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!-- Define shortcut files -->
+  <Fragment>
+    <!-- Start menu shortcut -->
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationStartMenuShortcut" Guid="446C324A-2539-4B19-AF1A-41C57303A973">
+        <!-- Override language ID -->
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="KIRSmartAV"
+                  Description="Open KIRSmartAV"
+                  Target="[#KIRSmartAV.exe]"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY" />
+
+        <!-- Define uninstall shortcut -->
+        <Shortcut Id="UninstallProduct"
+                  Name="Uninstall KIRSmartAV"
+                  Description="Uninstall KIRSmartAV"
+                  Target="[SystemFolder]msiexec.exe"
+                  Arguments="/x [ProductCode]" />
+
+        <!-- Define uninstallation actions -->
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\KIRSmartAV" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+    
+    <!-- Desktop shortcut -->
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationDesktopShortcut" Guid="99F63A78-75C1-419D-BAE8-C91C630FC2C0">
+        <!-- Define launcher shortcut -->
+        <Shortcut Id="ApplicationDesktopShortcut"
+                  Name="KIRSmartAV"
+                  Description="Open KIRSmartAV"
+                  Target="[#KIRSmartAV.exe]"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY" />
+
+        <!-- Define uninstallation actions -->
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\KIRSmartAV" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

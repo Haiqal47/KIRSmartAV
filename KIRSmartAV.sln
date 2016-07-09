@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KIRSmartAV", "KIRSmartAV\KIRSmartAV.csproj", "{DE9EDB88-7ADB-41FA-821E-DEBD3A39319B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KIRSmartAV.Core", "KIRSmartAV.Core\KIRSmartAV.Core.csproj", "{8340A1EC-6C2A-4049-9AA5-0CB6E0F64425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MClamSlim", "MClamSlim\MClamSlim.csproj", "{4E83E539-4D21-4352-81DE-74C0BA9D44BA}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "KIRSmartAV-setup", "KIRSmartAV-setup\KIRSmartAV-setup.wixproj", "{7D555EB5-5078-4A71-9C8F-E4D4A41A18F0}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "KIRSmartAV-bundle", "KIRSmartAV-bundle\KIRSmartAV-bundle.wixproj", "{150FE2DF-0AB3-4D2C-94FB-EA707E5289C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE9EDB88-7ADB-41FA-821E-DEBD3A39319B}.Debug|x86.ActiveCfg = Debug|x86
+		{DE9EDB88-7ADB-41FA-821E-DEBD3A39319B}.Debug|x86.Build.0 = Debug|x86
+		{DE9EDB88-7ADB-41FA-821E-DEBD3A39319B}.Release|x86.ActiveCfg = Release|x86
+		{DE9EDB88-7ADB-41FA-821E-DEBD3A39319B}.Release|x86.Build.0 = Release|x86
+		{8340A1EC-6C2A-4049-9AA5-0CB6E0F64425}.Debug|x86.ActiveCfg = Debug|x86
+		{8340A1EC-6C2A-4049-9AA5-0CB6E0F64425}.Debug|x86.Build.0 = Debug|x86
+		{8340A1EC-6C2A-4049-9AA5-0CB6E0F64425}.Release|x86.ActiveCfg = Release|x86
+		{8340A1EC-6C2A-4049-9AA5-0CB6E0F64425}.Release|x86.Build.0 = Release|x86
+		{4E83E539-4D21-4352-81DE-74C0BA9D44BA}.Debug|x86.ActiveCfg = Debug|x86
+		{4E83E539-4D21-4352-81DE-74C0BA9D44BA}.Debug|x86.Build.0 = Debug|x86
+		{4E83E539-4D21-4352-81DE-74C0BA9D44BA}.Release|x86.ActiveCfg = Release|x86
+		{4E83E539-4D21-4352-81DE-74C0BA9D44BA}.Release|x86.Build.0 = Release|x86
+		{7D555EB5-5078-4A71-9C8F-E4D4A41A18F0}.Debug|x86.ActiveCfg = Debug|x86
+		{7D555EB5-5078-4A71-9C8F-E4D4A41A18F0}.Debug|x86.Build.0 = Debug|x86
+		{7D555EB5-5078-4A71-9C8F-E4D4A41A18F0}.Release|x86.ActiveCfg = Release|x86
+		{7D555EB5-5078-4A71-9C8F-E4D4A41A18F0}.Release|x86.Build.0 = Release|x86
+		{150FE2DF-0AB3-4D2C-94FB-EA707E5289C3}.Debug|x86.ActiveCfg = Debug|x86
+		{150FE2DF-0AB3-4D2C-94FB-EA707E5289C3}.Debug|x86.Build.0 = Debug|x86
+		{150FE2DF-0AB3-4D2C-94FB-EA707E5289C3}.Release|x86.ActiveCfg = Release|x86
+		{150FE2DF-0AB3-4D2C-94FB-EA707E5289C3}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

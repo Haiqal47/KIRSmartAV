@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivateText" xml:space="preserve">
+    <value>Aktifkan</value>
+  </data>
+  <data name="ActiveText" xml:space="preserve">
+    <value>aktif</value>
+  </data>
+  <data name="DeactivateText" xml:space="preserve">
+    <value>Matikan</value>
+  </data>
+  <data name="DeactiveText" xml:space="preserve">
+    <value>non-aktif</value>
+  </data>
+  <data name="EncodeDecodeCompletedText" xml:space="preserve">
+    <value>Proses enkode/dekode telah selesai.</value>
+  </data>
+  <data name="EncodeDecodeCompletedTitle" xml:space="preserve">
+    <value>Selesai.</value>
+  </data>
+  <data name="ErrorFileNotSelectedText" xml:space="preserve">
+    <value>Harap pilih berkas input dan/atau output terlebih dahulu!</value>
+  </data>
+  <data name="ErrorFileNotSelectedTitle" xml:space="preserve">
+    <value>Berkas belum dipilih.</value>
+  </data>
+  <data name="ErrorNotElevatedText" xml:space="preserve">
+    <value>Buka ulang program ini dengan hak administratif (Run as Administrator).</value>
+  </data>
+  <data name="ErrorNotElevatedTitle" xml:space="preserve">
+    <value>Harus di elevasi.</value>
+  </data>
+  <data name="ExistText" xml:space="preserve">
+    <value>Ada</value>
+  </data>
+  <data name="InstallText" xml:space="preserve">
+    <value>Pasang</value>
+  </data>
+  <data name="KClamAV_Desc" xml:space="preserve">
+    <value>Mesin antivirus untuk memindai dan menghapus virus komputer.</value>
+  </data>
+  <data name="KCrypt_Desc" xml:space="preserve">
+    <value>Enkripsi/dekripsi berkas anda menggunakan transformasi Base64.</value>
+  </data>
+  <data name="KCure_Desc" xml:space="preserve">
+    <value>Proteksi diskalepas agar lebih sulit untuk terinfeksi virus.</value>
+  </data>
+  <data name="KIRSmartAVTitle" xml:space="preserve">
+    <value>KIRSmartAV</value>
+  </data>
+  <data name="KProtect_Desc" xml:space="preserve">
+    <value>Proteksi komputer untuk mencegah infeksi virus melalui diskalepas.</value>
+  </data>
+  <data name="KUnhide_Desc" xml:space="preserve">
+    <value>Tampilkan kembali berkas dan folder yang disembunyikan virus.</value>
+  </data>
+  <data name="KUnhide_RepairAttribute" xml:space="preserve">
+    <value>Perbaiki atribut</value>
+  </data>
+  <data name="MissingText" xml:space="preserve">
+    <value>Hilang</value>
+  </data>
+  <data name="NotifyDriveNotSelectedText" xml:space="preserve">
+    <value>Harap pilih diskalepas telebih dahulu!</value>
+  </data>
+  <data name="NotifyDriveNotSelectedTitle" xml:space="preserve">
+    <value>Diskalepas belum dipilih.</value>
+  </data>
+  <data name="NotifyDrivePlugged" xml:space="preserve">
+    <value>Perangkat diskalepas baru terpasang.</value>
+  </data>
+  <data name="NotifyRunningBackground" xml:space="preserve">
+    <value>Program akan berjalan dibelakang layar.</value>
+  </data>
+  <data name="SafeChestDeletionText" xml:space="preserve">
+    <value>Apakah anda ingin menghapus folder SafeChest? Semua konten folder akan dihapus juga.</value>
+  </data>
+  <data name="SafeChestDeletionTitle" xml:space="preserve">
+    <value>Konfirmasi penghapusan SafeChest.</value>
+  </data>
+  <data name="ScanCompileEngine" xml:space="preserve">
+    <value>Kompilasi mesin antivirus...</value>
+  </data>
+  <data name="ScanCompletedNoVirus" xml:space="preserve">
+    <value>Pemindaian selesai. Tidak ada virus terdeteksi.</value>
+  </data>
+  <data name="ScanCompletedViruses" xml:space="preserve">
+    <value>Pemindaian selesai. Beberapa virus terdeteksi.</value>
+  </data>
+  <data name="ScanCountText" xml:space="preserve">
+    <value>Menghitung berkas...</value>
+  </data>
+  <data name="ScaningStill" xml:space="preserve">
+    <value>Memindai objek...</value>
+  </data>
+  <data name="ScanPrepareClamav" xml:space="preserve">
+    <value>Inisialisasi libclamav...</value>
+  </data>
+  <data name="ScanPrepareDatabase" xml:space="preserve">
+    <value>Mengambil basis data...</value>
+  </data>
+  <data name="ScanRepairCompleted" xml:space="preserve">
+    <value>Selesai memperbaiki.</value>
+  </data>
+  <data name="ScanRepairing" xml:space="preserve">
+    <value>Memperbaiki...</value>
+  </data>
+  <data name="ScanRepairText" xml:space="preserve">
+    <value>Perbaiki</value>
+  </data>
+  <data name="ScanSelectPathText" xml:space="preserve">
+    <value>Harap pilih lokasi pemindaian terlebih dahulu.</value>
+  </data>
+  <data name="ScanStartText" xml:space="preserve">
+    <value>Mulai pindai</value>
+  </data>
+  <data name="ScanVirusDetected" xml:space="preserve">
+    <value>Objek virus ditemukan.</value>
+  </data>
+  <data name="StartText" xml:space="preserve">
+    <value>Mulai</value>
+  </data>
+  <data name="StopText" xml:space="preserve">
+    <value>Berhenti</value>
+  </data>
+  <data name="UninstallText" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="AddElevationManifestText" xml:space="preserve">
+    <value>Fitur ini bersifat eksperimental, penggunaan fitur ini hanya diizinkan dalam lingkungan pengembangan.</value>
+  </data>
+  <data name="UnableChangeRegistryText" xml:space="preserve">
+    <value>Tidak dapat menambah entri pada sistem.</value>
+  </data>
+  <data name="QuickFixFinished" xml:space="preserve">
+    <value>Diskalepas telah terpasang dan QuickFix telah memeriksanya.</value>
+  </data>
+  <data name="LibclamavError" xml:space="preserve">
+    <value>Tidak dapat mengakses libclamav. Kemampuan antivirus ditiadakan.</value>
+  </data>
+  <data name="ScanEngineError" xml:space="preserve">
+    <value>Libclamav mengalami kegagalan. Pemindaian dibatalkan.</value>
+  </data>
+</root>

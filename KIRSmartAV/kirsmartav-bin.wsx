@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="KIRSmartAV.Binaries">
+            <Component Id="cmp1E801E2F8FD09A6D2828F88F7C6600EE" Guid="*">
+                <File Id="fil438A22D4F4B7640C26C10731BA3AE099" Source="$(var.KIRSmartAV.TargetDir)\KIRSmartAV.exe" />
+            </Component>
+            <Component Id="cmp693B484D80EDB00B6FA53C1D0F6A80EE" Guid="*">
+                <File Id="filE4AA267686568DF69193E2E50C90E0D6" Source="$(var.KIRSmartAV.TargetDir)\KIRSmartAV.exe.config" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="KIRSmartAV.Binaries">
+            <ComponentRef Id="cmp1E801E2F8FD09A6D2828F88F7C6600EE" />
+            <ComponentRef Id="cmp693B484D80EDB00B6FA53C1D0F6A80EE" />
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="KIRSmartAV.Satellites">
+            <Directory Id="dirEE1EFF18FD4880376BE236DE2FB9C243" Name="id-ID" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="KIRSmartAV.Satellites">
+            <ComponentRef Id="cmp5BE7AB410FF977B639DD36AD983862B7" />
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirEE1EFF18FD4880376BE236DE2FB9C243">
+            <Component Id="cmp5BE7AB410FF977B639DD36AD983862B7" Guid="*">
+                <File Id="filFB5E5D5D164037D782E8C4767C312CC2" Source="$(var.KIRSmartAV.TargetDir)\id-ID\KIRSmartAV.resources.dll" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+</Wix>

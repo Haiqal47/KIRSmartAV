@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!-- Define product -->
+	<Product Id="F58BF2EA-242D-4205-B5B0-6DF6CB3ECC9C" Name="KIRSmartAV" Language="1033" Version="3.4.3"
+           Manufacturer="KIRSmartCyber" UpgradeCode="7ed8e46f-2d28-420f-baf9-9f48957d2f99">
+    
+    <!-- Define package -->
+		<Package Keywords="Installer" Description="KISmartAV Setup" Manufacturer="Fahmi Noor Fiqri"
+             InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <!-- Check for major upgrade -->
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    
+    <!-- Define cabinet file for files container -->
+		<Media Id="1" Cabinet="setup1.cab" EmbedCab="yes" />
+
+    <!-- NET Framework required -->
+    <PropertyRef Id="NETFRAMEWORK20_SP_LEVEL" />
+    <Condition Message='This setup requires the .NET Framework 2.0 SP1 installed.'>
+      <![CDATA[(NETFRAMEWORK20_SP_LEVEL AND NOT NETFRAMEWORK20_SP_LEVEL = "#0") OR Installed]]>
+    </Condition>
+
+    <!-- Define icon in Control Panel -->
+    <Icon Id="icon.ico" SourceFile="files\icon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+    
+    <!-- Define UI -->
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONROOTDIRECTORY" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch KIRSmartAV" />
+
+    <WixVariable Id="WixUILicenseRtf" Value="files\license\endLicense-en.rtf" />
+    
+    <UI>
+      <UIRef Id="WixUI_InstallDir" />
+      <UIRef Id="WixUI_ErrorProgressText" />  
+      
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    
+    <!-- Custom install actions -->
+    <Property Id="WixShellExecTarget" Value="[#KIRSmartAV.exe]" />
+    
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+    <CustomAction Id="LaunchStartupApp" Directory="APPLICATIONROOTDIRECTORY" ExeCommand="[SystemFolder]cmd.exe /c start KIRSmartAV.exe /startup" Return="asyncNoWait" />
+    
+    <!-- Custom install sequence -->
+    <InstallExecuteSequence>
+      <Custom Action="LaunchStartupApp" After="InstallFinalize">NOT Installed</Custom>
+    </InstallExecuteSequence>
+        
+    <!-- Define components to be installed -->
+		<Feature Id="MainProgramFeature" Title="KIRSmartAV" Level="1" Description="KIRSmartAV main program features.">
+      <!-- Main components -->
+      <ComponentRef Id="KIRSmartAV.exe" />
+      <ComponentRef Id="KIRSmartAV.exe.config" />
+      <ComponentRef Id="KIRSmartAV.resources.dll" />
+      <ComponentRef Id="KIRSmartAV.Core.dll" />
+
+      <!-- libclamav -->
+      <ComponentRef Id="MClamSlim.dll" />
+      <ComponentRef Id="libclamavBinaries" />
+      <ComponentRef Id="DatabaseUpdates" />
+
+      <!-- shortcuts -->
+      <ComponentRef Id="ApplicationStartMenuShortcut" />
+      <ComponentRef Id="ApplicationDesktopShortcut" />
+      
+      <!-- windows hotfix and license -->
+      <ComponentRef Id="WindowsHotfixes" />
+      <ComponentRef Id="LicenseFiles" />
+		</Feature>
+	</Product>
+</Wix>

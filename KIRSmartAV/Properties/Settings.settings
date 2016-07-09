@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="KIRSmartAV.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="QuickFixEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ChestPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">[UNSET]</Value>
+    </Setting>
+    <Setting Name="QuickFixRecrusive" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UILanguage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Indonesia</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

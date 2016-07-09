@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.10</ProductVersion>
+    <ProjectGuid>7d555eb5-5078-4a71-9c8f-e4d4a41a18f0</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>KIRSmartAV-setup</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <VerboseOutput>False</VerboseOutput>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Files.wxs" />
+    <Compile Include="Folders.wxs" />
+    <Compile Include="Product.wxs" />
+    <Compile Include="Shortcuts.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KIRSmartAV.Core\KIRSmartAV.Core.csproj">
+      <Name>KIRSmartAV.Core</Name>
+      <Project>{8340a1ec-6c2a-4049-9aa5-0cb6e0f64425}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\KIRSmartAV\KIRSmartAV.csproj">
+      <Name>KIRSmartAV</Name>
+      <Project>{de9edb88-7adb-41fa-821e-debd3a39319b}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MClamSlim\MClamSlim.csproj">
+      <Name>MClamSlim</Name>
+      <Project>{4e83e539-4d21-4352-81de-74c0ba9d44ba}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixBalExtension">
+      <HintPath>$(WixExtDir)\WixBalExtension.dll</HintPath>
+      <Name>WixBalExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="files" />
+    <Folder Include="files\clamav" />
+    <Folder Include="files\database" />
+    <Folder Include="files\license" />
+    <Folder Include="files\updates" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="files\clamav\libclamav.dll" />
+    <Content Include="files\clamav\libclamunrar.dll" />
+    <Content Include="files\clamav\libclamunrar_iface.dll" />
+    <Content Include="files\clamav\libeay32.dll" />
+    <Content Include="files\clamav\ssleay32.dll" />
+    <Content Include="files\database\bytecode.cvd" />
+    <Content Include="files\database\daily.cvd" />
+    <Content Include="files\database\main.cvd" />
+    <Content Include="files\icon.ico" />
+    <Content Include="files\license\COPYING.bzip2" />
+    <Content Include="files\license\COPYING.file" />
+    <Content Include="files\license\COPYING.getopt" />
+    <Content Include="files\license\COPYING.gnu" />
+    <Content Include="files\license\COPYING.LGPL" />
+    <Content Include="files\license\COPYING.llvm" />
+    <Content Include="files\license\COPYING.lzma" />
+    <Content Include="files\license\COPYING.pcre" />
+    <Content Include="files\license\COPYING.regex" />
+    <Content Include="files\license\COPYING.unrar" />
+    <Content Include="files\license\COPYING.YARA" />
+    <Content Include="files\license\COPYING.zlib" />
+    <Content Include="files\license\endLicense-en.rtf" />
+    <Content Include="files\license\endLicense-id.rtf" />
+    <Content Include="files\log-manager-verbose.txt" />
+    <Content Include="files\updates\vista_x64.msu" />
+    <Content Include="files\updates\vista_x86.msu" />
+    <Content Include="files\updates\xp_x64.exe" />
+    <Content Include="files\updates\xp_x86.exe" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+  <!-- Bundle -->
+	<Bundle Name="KIRSmartAV Bundle" Version="3.4.3.45" Manufacturer="KIRSmartCyber" UpgradeCode="150fe2df-0ab3-4d2c-94fb-ea707e5289c3"
+           HelpUrl="https://kirsmartcyber47.wordpress.com">
+    
+    <!-- Main bootstrapper -->
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
+      <bal:WixStandardBootstrapperApplication LicenseFile="setups\endLicense-en.rtf" />
+    </BootstrapperApplicationRef>
+
+    <!-- Define registry search for dependecies -->
+    <util:RegistrySearch Root="HKLM" Key="SOFTWARE\Microsoft\Net Framework Setup\NDP\v2.0.50727" Value="SP" Variable="Net20SP2" />
+    <util:RegistrySearch Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\10.0\VC\VCRedist\x86" Value="Installed" Variable="VCRedistX86" />
+
+    <!-- Define the list of chained packages. -->
+		<Chain>
+      <!-- Visual C++ 2010 Redist -->
+      <ExePackage Id="VCRedist_Setup" PerMachine="yes" Permanent="yes" Vital="yes"
+                  SourceFile ="setups\vcredist_x86.exe"
+                  InstallCommand="/q /norestart"
+                  DetectCondition="VCRedistX86 = 1"
+                  InstallCondition="(VersionNT >= v5.1 OR VersionNT64 >= v5.2) AND (NOT VCRedistX86 = 1)" />
+      
+      <!-- .NET Framework 2.0 -->
+      <ExePackage Id="NetFx20SP2_Setup" PerMachine="yes" Permanent="yes" Vital="yes"
+                  SourceFile ="setups\NetFx20SP2_x86.exe"
+                  InstallCommand="/q /norestart"
+                  DetectCondition="Net20SP2 = 2"
+                  InstallCondition="(VersionNT >= v5.1 OR VersionNT64 >= v5.2) AND ((NOT Net20SP2 = 0) OR (NOT Net20SP2 = 1))" />
+
+      <!-- Rollback boundary -->
+      <RollbackBoundary />
+
+      <!-- Main setup -->
+      <MsiPackage Id="KIRSmartAV_Setup" Permanent="no" Vital="yes" DisplayInternalUI="yes" 
+                  SourceFile="$(var.KIRSmartAV-setup.TargetPath)" />
+		</Chain>
+	</Bundle>
+</Wix>

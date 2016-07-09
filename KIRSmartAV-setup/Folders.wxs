@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!-- Define folders -->
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- Application folder on Program Files -->
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="APPLICATIONROOTDIRECTORY" Name="KIRSmartAV">
+          <Directory Id="LOCALEDIRECTORY" Name="id-ID" />
+          <Directory Id="DATABASEDIRECTORY" Name="database" />
+          <Directory Id="HOTFIXDIRECTORY" Name="updates" />
+          <Directory Id="LICENSEDIRECTORY" Name="COPYING" />
+        </Directory>
+      </Directory>
+      
+      <!-- Application shortcut folder on Start Menu -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="KIRSmartAV" />
+      </Directory>
+
+      <!-- Desktop shortcut -->
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+  </Fragment>
+</Wix>

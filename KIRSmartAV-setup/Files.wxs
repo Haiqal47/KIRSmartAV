@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <!-- Define source files -->
+  <Fragment>
+    <!-- Define main directory -->
+    <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+      <!-- Main program -->
+      <Component Id="KIRSmartAV.exe" Guid="2592CB58-7742-4EC6-B054-B249A4A706E6">
+        <File Id="KIRSmartAV.exe" Name="KIRSmartAV.exe" DiskId="1" Source="$(var.KIRSmartAV.TargetPath)" Checksum="yes" KeyPath="yes">
+          <!-- Generate Native Image -->
+          <netfx:NativeImage Id="ngen_KIRSmartAV.exe" Platform="32bit" Priority="0"/>
+        </File>
+      </Component>
+      
+      <!-- Configuration file -->
+      <Component Id="KIRSmartAV.exe.config" Guid="6FAFBAC9-7824-4D8E-A0F1-D704524A74E3">
+        <File Id="KIRSmartAV.exe.config" DiskId="1" Source="$(var.KIRSmartAV.TargetDir)\KIRSmartAV.exe.config" KeyPath="yes"/>
+      </Component>
+      
+      <!-- KCore -->
+      <Component Id="KIRSmartAV.Core.dll" Guid="8E050C63-7AEF-4E10-B564-C66EB9FA3A12">
+        <File Id="KIRSmartAV.Core.dll" Name="KIRSmartAV.Core.dll" DiskId="1" Source="$(var.KIRSmartAV.Core.TargetPath)" Checksum="yes" KeyPath="yes">
+          <!-- Generate Native Image -->
+          <netfx:NativeImage Id="ngen_KIRSmartAV.Core.dll" Platform="32bit" Priority="0" AppBaseDirectory="APPLICATIONROOTDIRECTORY"/>
+        </File>
+      </Component>
+      
+      <!-- MClamSlim -->
+      <Component Id="MClamSlim.dll" Guid="36DAD33C-1D39-4092-8389-047713A8845B">
+        <File Id="MClamSlim.dll" Name="MClamSlim.dll" DiskId="1" Source="$(var.MClamSlim.TargetPath)" Checksum="yes" KeyPath="yes">
+          <!-- Generate Native Image -->
+          <netfx:NativeImage Id="ngen_MClamSlim.dll" Platform="32bit" Priority="0" AppBaseDirectory="APPLICATIONROOTDIRECTORY"/>
+        </File>
+      </Component>
+
+      <!-- libclamav -->
+      <Component Id="libclamavBinaries" Guid="172787B2-363C-49C6-B17A-485EF5BED54A">
+        <File Id="libclamav.dll" DiskId="1" Source="files\clamav\libclamav.dll" Checksum="yes" />
+        <File Id="libclamunrar.dll" DiskId="1" Source="files\clamav\libclamunrar.dll" Checksum="yes" />
+        <File Id="libclamunrar_iface.dll" DiskId="1" Source="files\clamav\libclamunrar_iface.dll" Checksum="yes" />
+        <File Id="libeay32.dll" DiskId="1" Source="files\clamav\libeay32.dll" Checksum="yes" />
+        <File Id="ssleay32.dll" DiskId="1" Source="files\clamav\ssleay32.dll" Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- Define locale directory -->
+    <DirectoryRef Id="LOCALEDIRECTORY">
+      <Component Id="KIRSmartAV.resources.dll" Guid="174266C0-6F28-41CA-8F35-EC88E9A8A712">
+        <File Id="KIRSmartAV.resources.dll" DiskId="1" Source="$(var.KIRSmartAV.TargetDir)\id-ID\KIRSmartAV.resources.dll" Checksum="yes" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    
+    <!-- Define database directory -->
+    <DirectoryRef Id="DATABASEDIRECTORY">
+      <Component Id="DatabaseUpdates" Guid="78E04752-72F5-4DD4-A087-2A820B34FF26">
+        <File Id="bytecode.cvd" DiskId="1" Source="files\database\bytecode.cvd" Checksum="yes" />
+        <File Id="daily.cvd" DiskId="1" Source="files\database\daily.cvd" Checksum="yes" />
+        <File Id="main.cvd" DiskId="1" Source="files\database\main.cvd" Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- Define windows hotfixes -->
+    <DirectoryRef Id="HOTFIXDIRECTORY">
+      <Component Id="WindowsHotfixes" Guid="E5C39B3F-5EB1-455F-8C3A-CC4F24A328FE">
+        <File Id="vista_x64.msu" DiskId="1" Source="files\updates\vista_x64.msu" Checksum="yes" />
+        <File Id="vista_x86.msu" DiskId="1" Source="files\updates\vista_x86.msu" Checksum="yes" />
+        <File Id="xp_x64.exe" DiskId="1" Source="files\updates\xp_x64.exe" Checksum="yes" />
+        <File Id="xp_x86.exe" DiskId="1" Source="files\updates\xp_x86.exe" Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- Define license files -->
+    <DirectoryRef Id="LICENSEDIRECTORY">
+      <Component Id="LicenseFiles" Guid="BD16B9FD-0707-4FC8-A48F-CAF6776CA91A">
+        <File Id="COPYING.bzip2" DiskId="1" Source="files\license\COPYING.bzip2" />
+        <File Id="COPYING.file" DiskId="1" Source="files\license\COPYING.file" />
+        <File Id="COPYING.getopt" DiskId="1" Source="files\license\COPYING.gnu" />
+        <File Id="COPYING.LGPL" DiskId="1" Source="files\license\COPYING.LGPL" />
+        <File Id="COPYING.llvm" DiskId="1" Source="files\license\COPYING.llvm" />
+        <File Id="COPYING.lzma" DiskId="1" Source="files\license\COPYING.lzma" />
+        <File Id="COPYING.pcre" DiskId="1" Source="files\license\COPYING.pcre" />
+        <File Id="COPYING.regex" DiskId="1" Source="files\license\COPYING.regex" />
+        <File Id="COPYING.unrar" DiskId="1" Source="files\license\COPYING.unrar" />
+        <File Id="COPYING.YARA" DiskId="1" Source="files\license\COPYING.YARA" />
+        <File Id="COPYING.zlib" DiskId="1" Source="files\license\COPYING.zlib" />
+        <File Id="EULA_id.rtf" DiskId="1" Source="files\license\endLicense-id.rtf" />
+        <File Id="EULA_en.rtf" DiskId="1" Source="files\license\endLicense-en.rtf" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>
