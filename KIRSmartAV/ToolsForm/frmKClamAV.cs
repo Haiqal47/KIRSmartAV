@@ -251,7 +251,8 @@ namespace KIRSmartAV.ToolsForms
                 // encode first
                 try
                 {
-                    crpytoService.EncryptFile(filePath, Path.Combine(chestDir, AioHelpers.GenerateEncryptedFilename(filePath)));
+                    var movedName = AioHelpers.GenerateChestFilename(filePath, chestDir);
+                    crpytoService.EncryptFile(filePath, movedName);
                     imgIndex = 1;
                 }
                 catch (Exception ex)

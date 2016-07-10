@@ -21,10 +21,15 @@ namespace KIRSmartAV.ApplicationServices
 
         public const string StartupRegistryPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
 
-        public static readonly string[] ReservedNames = { "system volume information", "recycler", "recycler_detec", "autorun.inf" };        
-        public static readonly string DatabasePath = Path.Combine(Core.Helpers.GetExecutingAssembly(), "database");
-
+        public static readonly string[] ReservedNames = { "system volume information", "recycler", "recycler_detec", "autorun.inf", "indexervolumeguide" };
         private static readonly string DefaultChestDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), KCchestName);
+
+#if DEBUG
+        public static readonly string DatabasePath = "D:\\database";
+#else
+        public static readonly string DatabasePath = Path.Combine(Core.Helpers.GetExecutingAssembly(), "database");
+#endif
+        
         public static string GetChestFolder()
         {
             if (Properties.Settings.Default.ChestPath == "[UNSET]")
@@ -37,23 +42,29 @@ namespace KIRSmartAV.ApplicationServices
             }
         }
 
-        public static string GenerateEncryptedFilename(string origFilename)
+        public static string GenerateChestFilename(string sourceFilePath, string outputPath)
         {
-            var extension = Path.GetExtension(origFilename);
-            var fname = Path.GetFileNameWithoutExtension(origFilename);
-            var newFilename = "";
+            var extension = Path.GetExtension(sourceFilePath);
+            var fname = Path.GetFileNameWithoutExtension(sourceFilePath);
+            string outputFilePath = "";
 
             for (int i = 0; i < 100; i++)
             {
+                string newFilename = "";
                 if (i == 0)
-                    newFilename = origFilename + "." + VirusExtension;
+                {
+                    newFilename = Path.GetFileName(sourceFilePath) + "." + VirusExtension;
+                }
                 else
+                {
                     newFilename = string.Format("{0} ({1}){2}.{3}", fname, i, extension, VirusExtension);
+                }
 
-                if (!File.Exists(newFilename)) break;
+                outputFilePath = Path.Combine(outputPath, newFilename);
+                if (!File.Exists(outputFilePath)) break;
             }
 
-            return newFilename;
+            return outputFilePath;
         }
     }
 }

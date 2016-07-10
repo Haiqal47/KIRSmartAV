@@ -48,7 +48,7 @@ namespace KIRSmartAV.ApplicationServices
         {
             // check if it's is FAT32
             var driveVol = new DriveData(args.ToString());
-            if ((driveVol.DriveFormat != AioHelpers.Fat32Format) || !(driveVol.UsedSpace < AioHelpers.MaximumCheckSize))
+            if ((driveVol.DriveFormat != AioHelpers.Fat32Format))
             {
                 // this drive doesn't meet requirements.
                 return;
@@ -62,7 +62,7 @@ namespace KIRSmartAV.ApplicationServices
 
             // prepare variables
             var driveRoot = args.ToString();
-            var driveHidden = driveRoot + FastIO.BlankSpaceCharacter;
+            var driveHidden = driveRoot + "\\" + FastIO.BlankSpaceCharacter;
             var driveRecovered = driveRoot + "\\" + AioHelpers.KCrecoveredName;
 
             // restore root directory attribute
