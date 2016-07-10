@@ -24,6 +24,7 @@ namespace KIRSmartAV.Core
             _bwDecrypt.DoWork += BWDecrypt_DoWork;
         }
 
+        #region Async Event Handlers
         private void BWEncrypt_DoWork(object sender, DoWorkEventArgs e)
         {
             FileStream fsOutput = null;
@@ -52,7 +53,6 @@ namespace KIRSmartAV.Core
                     RaiseEventChanged(Convert.ToInt32(progress));
 
                     encodedStream.Write(buffer, 0, bytesRead);
-                    encodedStream.FlushFinalBlock();
                 }
 
                 if (totalLength != totalWritten)
@@ -69,10 +69,6 @@ namespace KIRSmartAV.Core
                 {
                     fsInput.Dispose();
                 }
-                //if (fsOutput != null)
-                //{
-                //    fsOutput.Dispose();
-                //}
             }
         }
 
@@ -104,7 +100,6 @@ namespace KIRSmartAV.Core
                     RaiseEventChanged(Convert.ToInt32(progress));
 
                     fsOutput.Write(buffer, 0, bytesRead);
-                    fsOutput.Flush();
                 }
 
                 if (totalLength != totalWritten)
@@ -117,17 +112,15 @@ namespace KIRSmartAV.Core
                 {
                     encodedStream.Dispose();
                 }
-                //if (fsInput != null)
-                //{
-                //    fsInput.Dispose();
-                //}
                 if (fsOutput != null)
                 {
                     fsOutput.Dispose();
                 }
             }
         }
+        #endregion
 
+        #region Async Methods
         public void RequestStop()
         {
             if (_bwDecrypt.IsBusy)
@@ -137,6 +130,36 @@ namespace KIRSmartAV.Core
                 _bwEncrypt.CancelAsync();
         }
 
+        public void EncryptFileAsync(string inputFilePath, string outputFilepath)
+        {
+            if (string.IsNullOrEmpty(outputFilepath))
+                throw new ArgumentNullException("outputFilepath");
+
+            if (string.IsNullOrEmpty(inputFilePath))
+                throw new ArgumentNullException("inputFilePath");
+
+            if (_bwEncrypt.IsBusy)
+                throw new InvalidOperationException("There is another encoding process on going.");
+
+            _bwEncrypt.RunWorkerAsync(new string[] { inputFilePath, outputFilepath });
+        }
+
+        public void DecryptFileAsync(string inputFilePath, string outputFilepath)
+        {
+            if (string.IsNullOrEmpty(outputFilepath))
+                throw new ArgumentNullException("outputFilepath");
+
+            if (string.IsNullOrEmpty(inputFilePath))
+                throw new ArgumentNullException("inputFilePath");
+
+            if (_bwDecrypt.IsBusy)
+                throw new InvalidOperationException("There is another decoding process on going.");
+
+            _bwDecrypt.RunWorkerAsync(new string[] { inputFilePath, outputFilepath });
+        }
+        #endregion
+
+        #region Sync Methods
         public void EncryptFile(string inputFilePath, string outputFilepath)
         {
             if (string.IsNullOrEmpty(outputFilepath))
@@ -164,7 +187,6 @@ namespace KIRSmartAV.Core
                 while ((bytesRead = fsInput.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     encodedStream.Write(buffer, 0, bytesRead);
-                    encodedStream.FlushFinalBlock();
                 }
             }
             finally
@@ -178,10 +200,6 @@ namespace KIRSmartAV.Core
                 {
                     fsInput.Dispose();
                 }
-                //if (fsOutput != null)
-                //{
-                //    fsOutput.Dispose();
-                //}
             }
         }
 
@@ -212,8 +230,7 @@ namespace KIRSmartAV.Core
                 while ((bytesRead = encodedStream.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     fsOutput.Write(buffer, 0, bytesRead);
-                    fsOutput.Flush();
-                } 
+                }
             }
             finally
             {
@@ -222,44 +239,13 @@ namespace KIRSmartAV.Core
                 {
                     encodedStream.Dispose();
                 }
-                //if (fsInput != null)
-                //{
-                //    fsInput.Dispose();
-                //}
                 if (fsOutput != null)
                 {
                     fsOutput.Dispose();
                 }
             }
         }
-
-        public void EncryptFileAsync(string inputFilePath, string outputFilepath)
-        {
-            if (string.IsNullOrEmpty(outputFilepath))
-                throw new ArgumentNullException("outputFilepath");
-
-            if (string.IsNullOrEmpty(inputFilePath))
-                throw new ArgumentNullException("inputFilePath");
-
-            if (_bwEncrypt.IsBusy)
-                throw new InvalidOperationException("There is another encoding process on going.");
-
-            _bwEncrypt.RunWorkerAsync(new string[] { inputFilePath, outputFilepath });
-        }
-
-        public void DecryptFileAsync(string inputFilePath, string outputFilepath)
-        {
-            if (string.IsNullOrEmpty(outputFilepath))
-                throw new ArgumentNullException("outputFilepath");
-
-            if (string.IsNullOrEmpty(inputFilePath))
-                throw new ArgumentNullException("inputFilePath");
-
-            if (_bwDecrypt.IsBusy)
-                throw new InvalidOperationException("There is another decoding process on going.");
-
-            _bwDecrypt.RunWorkerAsync(new string[] { inputFilePath, outputFilepath });
-        }
+        #endregion
 
         private void RaiseEventChanged(int progressPercentage)
         {
