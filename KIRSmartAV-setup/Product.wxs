@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Product.wxs (KIRSmartAV-setup.wixproj)
-  ======================================
   WiX Setup project to create MSI package of KIRSmartAV product.
+  =================================================================
+  Defines main product information.
 
   This file is a part of KIRSmartAV product which it's copyright(s)
   belongs to Fahmi Noor Fiqri as the owner of this code. Any 

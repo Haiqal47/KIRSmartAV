@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Bundle.wxs (KIRSmartAV-bundle.wixproj)
-  ======================================
-  WiX Setup project to create MSI package of KIRSmartAV product.
+  WiX Bundle project to create EXE bootstrapper of KIRSmartAV product.
+  =================================================================
+  Defines bootstrapper chain packages.
 
   This file is a part of KIRSmartAV product which it's copyright(s)
   belongs to Fahmi Noor Fiqri as the owner of this code. Any 

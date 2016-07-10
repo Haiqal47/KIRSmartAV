@@ -69,6 +69,7 @@
     <Compile Include="WindowsOS.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="KIRSmartAV.Core.licenseheader" />
     <None Include="KIRSmartAV.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
