@@ -43,14 +43,6 @@
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="setups" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="setups\endLicense-en.rtf" />
-    <Content Include="setups\NetFx20SP2_x86.exe" />
-    <Content Include="setups\vcredist_x86.exe" />
-  </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.

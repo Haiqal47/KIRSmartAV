@@ -71,43 +71,6 @@
       <Name>WixUIExtension</Name>
     </WixExtension>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="files" />
-    <Folder Include="files\clamav" />
-    <Folder Include="files\database" />
-    <Folder Include="files\license" />
-    <Folder Include="files\updates" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="files\clamav\libclamav.dll" />
-    <Content Include="files\clamav\libclamunrar.dll" />
-    <Content Include="files\clamav\libclamunrar_iface.dll" />
-    <Content Include="files\clamav\libeay32.dll" />
-    <Content Include="files\clamav\ssleay32.dll" />
-    <Content Include="files\database\bytecode.cvd" />
-    <Content Include="files\database\daily.cvd" />
-    <Content Include="files\database\main.cvd" />
-    <Content Include="files\icon.ico" />
-    <Content Include="files\license\COPYING.bzip2" />
-    <Content Include="files\license\COPYING.file" />
-    <Content Include="files\license\COPYING.getopt" />
-    <Content Include="files\license\COPYING.gnu" />
-    <Content Include="files\license\COPYING.LGPL" />
-    <Content Include="files\license\COPYING.llvm" />
-    <Content Include="files\license\COPYING.lzma" />
-    <Content Include="files\license\COPYING.pcre" />
-    <Content Include="files\license\COPYING.regex" />
-    <Content Include="files\license\COPYING.unrar" />
-    <Content Include="files\license\COPYING.YARA" />
-    <Content Include="files\license\COPYING.zlib" />
-    <Content Include="files\license\endLicense-en.rtf" />
-    <Content Include="files\license\endLicense-id.rtf" />
-    <Content Include="files\log-manager-verbose.txt" />
-    <Content Include="files\updates\vista_x64.msu" />
-    <Content Include="files\updates\vista_x86.msu" />
-    <Content Include="files\updates\xp_x64.exe" />
-    <Content Include="files\updates\xp_x86.exe" />
-  </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
