@@ -22,6 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 using System.Text;
 
 namespace KIRSmartAV.Core
@@ -31,6 +32,7 @@ namespace KIRSmartAV.Core
         internal const string UNICODE_PREFIX = @"\\?\";
         public const string BlankSpaceCharacter = @" ";
 
+        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         public static bool SetFileAttribute(string path, FileAttributes attrib, bool ignoreException = true)
         {
             if (!NativeMethods.SetFileAttributes(path, attrib))
@@ -46,6 +48,7 @@ namespace KIRSmartAV.Core
             }
         }
 
+        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         public static bool MoveFile(string file1, string file2, bool ignoreException = true)
         {
             if (NativeMethods.MoveFile(file1, file2))
@@ -92,7 +95,9 @@ namespace KIRSmartAV.Core
                             {
                                 var curPath = Path.Combine(currentPath, win_find_data.cFileName);
                                 if (option == SearchOption.AllDirectories)
+                                {
                                     qDirectories.Enqueue(curPath);
+                                }
                                 yield return curPath;
                             }
                         }
@@ -108,7 +113,6 @@ namespace KIRSmartAV.Core
             if ((option != SearchOption.AllDirectories) && (option != SearchOption.TopDirectoryOnly))
                 throw new ArgumentOutOfRangeException("option");
 
-            string fullpath = Path.GetFullPath(path);
             var win_find_data = new WIN32_FIND_DATA();
 
             SafeFindHandle hndFindFile;
@@ -125,18 +129,16 @@ namespace KIRSmartAV.Core
                 {
                     do
                     {
+                        var curPath = Path.Combine(currentPath, win_find_data.cFileName);
                         if ((win_find_data.dwFileAttributes & FileAttributes.Directory) == FileAttributes.Directory)
                         {
-                            if ("." != win_find_data.cFileName && ".." != win_find_data.cFileName)
+                            if ("." != win_find_data.cFileName && ".." != win_find_data.cFileName && option == SearchOption.AllDirectories)
                             {
-                                var curPath = Path.Combine(currentPath, win_find_data.cFileName);
-                                if (option == SearchOption.AllDirectories)
-                                    qDirectories.Enqueue(curPath);
+                                qDirectories.Enqueue(curPath);
                             }
                         }
                         else
                         {
-                            var curPath = Path.Combine(currentPath, win_find_data.cFileName);
                             yield return new FileData(currentPath, win_find_data);
                         }
                     } while (NativeMethods.FindNextFile(hndFindFile, win_find_data));

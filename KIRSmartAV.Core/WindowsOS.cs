@@ -125,7 +125,7 @@ namespace KIRSmartAV.Core
         #endregion
 
         #region Recycle Bin
-        [Obsolete]
+        [Obsolete(), SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         public static void QueryRecycleBin(out long totalSize, out long itemsCount)
         {
             var queryData = new SHQUERYRBINFO();

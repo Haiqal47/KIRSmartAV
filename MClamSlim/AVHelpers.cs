@@ -21,6 +21,7 @@ using MClamSlim.Native;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 
 namespace MClamSlim
 {
@@ -34,6 +35,7 @@ namespace MClamSlim
         /// </summary>
         /// <param name="errorCode">Error code returned from Libclamav.</param>
         /// <returns>Human-readable error message.</returns>
+        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         internal static string ErrorCodeToString(int errorCode)
         {
             IntPtr strData;

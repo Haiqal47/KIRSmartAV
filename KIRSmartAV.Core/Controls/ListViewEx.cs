@@ -20,6 +20,7 @@
 using KIRSmartAV.Core.Native;
 using System;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using System.Text;
 using System.Windows.Forms;
 
@@ -36,6 +37,7 @@ namespace KIRSmartAV.Core.Controls
             SetStyle(ControlStyles.EnableNotifyMessage, true);
         }
 
+        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         protected override void OnNotifyMessage(Message m)
         {
             if (m.Msg != NativeConstants.WM_ERASEBKGND)
