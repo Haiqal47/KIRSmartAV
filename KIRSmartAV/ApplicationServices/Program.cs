@@ -52,7 +52,7 @@ namespace KIRSmartAV
                 bool langEn = true;
 
                 // check culture info
-                langEn = _settings.UILanguage == "Indonesia" ? false : true; 
+                langEn = _settings.UILanguage == "Indonesia" ? false : true;
 
                 // command-line switches
                 foreach (string argument in args)
@@ -92,7 +92,7 @@ namespace KIRSmartAV
                         Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
                     }
                     else
-                    { 
+                    {
                         Thread.CurrentThread.CurrentUICulture = new CultureInfo("id-ID");
                     }
 

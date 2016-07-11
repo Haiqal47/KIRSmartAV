@@ -34,7 +34,6 @@ namespace KIRSmartAV.ApplicationServices
         public static readonly int WM_SHOWME = RegisterWindowMessage("WM_SHOWME");
         public static readonly int WM_QUICKFIXNOTIFY = RegisterWindowMessage("WM_QUICKFIXNOTIFY");
 
-
         [DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetForegroundWindow([In()] IntPtr hWnd);
