@@ -53,6 +53,7 @@
     <Compile Include="ScanResult.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MClamSlim.licenseheader" />
     <None Include="MClamSlim.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
