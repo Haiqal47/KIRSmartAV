@@ -1,10 +1,10 @@
 # KIRSmartAV - Open Source Antivirus Project
 
-[![Build Status](https://travis-ci.org/fahminlb33/KIRSmartAV.svg?branch=master)](https://travis-ci.org/fahminlb33/KIRSmartAV)
+KIRSmartAV Build Status is [![Build Status](https://travis-ci.org/fahminlb33/KIRSmartAV.svg?branch=master)](https://travis-ci.org/fahminlb33/KIRSmartAV)
 
 KIRSmartAV is an open source antivirus built for handling virus infection mainly spread over flashdrives. It's uses ClamAV engine to provide virus scan solution.
 
-KIRSmartAV adalah antivirus *sumber terbuka* yang dibuat untuk menangani infeksi virus yang utamanya menyebar melalui diskalepas. KIRSmartAV menggunakan mesin ClamAV untuk menyediakan kemampuan pemindaian virus.
+KIRSmartAV adalah antivirus sumber terbuka yang dibuat untuk menangani infeksi virus yang utamanya menyebar melalui diskalepas. KIRSmartAV menggunakan mesin ClamAV untuk menyediakan kemampuan pemindaian virus.
 
 ## Hello from me! :)
 Hi, I'm Fahmi Noor Fiqri the developer of this program and the owner of this repo. Feel free to ask me anything about this app.
@@ -24,4 +24,5 @@ You wanted to use one of these libraries for your own project? Use it! It's free
 
 ## License
 * All source code on this repo is licensed under GNU GPL v3.
+* MClamSlim is licensed under GNU LGPL v3.
 * ClamAV is licensed under GNU GPL v2.
