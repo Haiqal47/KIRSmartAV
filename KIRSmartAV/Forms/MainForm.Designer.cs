@@ -92,16 +92,15 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.ImageList = this.imgButtonsTab;
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.cmdSettings);
             this.tabPage1.Controls.Add(this.cmdMinimize);
             this.tabPage1.Controls.Add(this.cmdAbout);
@@ -111,6 +110,7 @@
             this.tabPage1.Controls.Add(this.lblStat_QuickFix);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -173,18 +173,18 @@
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.lvTools);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // lvTools
             // 
-            resources.ApplyResources(this.lvTools, "lvTools");
             this.lvTools.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
             this.lvTools.LargeImageList = this.imgTools;
+            resources.ApplyResources(this.lvTools, "lvTools");
             this.lvTools.Name = "lvTools";
             this.lvTools.SmallImageList = this.imgTools;
             this.lvTools.UseCompatibleStateImageBehavior = false;
@@ -201,8 +201,8 @@
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::KIRSmartAV.Properties.Resources.logoSmall;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 

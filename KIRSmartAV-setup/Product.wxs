@@ -19,7 +19,7 @@
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <!-- Define product -->
-	<Product Id="F58BF2EA-242D-4205-B5B0-6DF6CB3ECC9C" Name="KIRSmartAV" Language="1033" Version="3.4.3"
+	<Product Id="F58BF2EA-242D-4205-B5B0-6DF6CB3ECC9C" Name="KIRSmartAV" Language="1033" Version="3.4.3.45"
            Manufacturer="KIRSmartCyber" UpgradeCode="7ed8e46f-2d28-420f-baf9-9f48957d2f99">
     
     <!-- Define package -->

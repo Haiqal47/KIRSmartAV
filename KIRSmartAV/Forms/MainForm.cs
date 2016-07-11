@@ -47,14 +47,10 @@ namespace KIRSmartAV.Forms
         private void CheckStatus()
         {
             // update quickfix
-            if (_appSettings.QuickFixEnabled)
-            {
-                lblStat_QuickFix.Text = strings.ActiveText;
-            }
-            else
-            {
-                lblStat_QuickFix.Text = strings.DeactiveText;
-            }
+            lblStat_QuickFix.Text = _appSettings.QuickFixEnabled ? strings.ActiveText : strings.DeactiveText;
+            
+            // label version
+            lblStat_Version.Text = "v" + Application.ProductVersion;
 
             // update signatures
             try
@@ -72,6 +68,36 @@ namespace KIRSmartAV.Forms
                 KcavContext.CurrentContext.ShowBaloonTip(strings.KIRSmartAVTitle, strings.LibclamavError, ToolTipIcon.Warning);
                 _antivirusCapability = false;
             }
+        }
+
+        private void RefreshListViewItems()
+        {
+            // clear all items
+            lvTools.Items.Clear();
+            ListViewItem curItem = null;
+
+            // add items to listview
+            curItem = lvTools.Items.Add("KClamAV");
+            curItem.SubItems.Add(strings.KClamAV_Desc);
+            curItem.ImageIndex = 0;
+
+            curItem = lvTools.Items.Add("KUnhide");
+            curItem.SubItems.Add(strings.KUnhide_Desc);
+            curItem.ImageIndex = 1;
+
+            curItem = lvTools.Items.Add("KCure");
+            curItem.SubItems.Add(strings.KCure_Desc);
+            curItem.ImageIndex = 2;
+
+            curItem = lvTools.Items.Add("KProtect");
+            curItem.SubItems.Add(strings.KProtect_Desc);
+            curItem.ImageIndex = 3;
+
+            curItem = lvTools.Items.Add("KCrypt");
+            curItem.SubItems.Add(strings.KProtect_Desc);
+            curItem.ImageIndex = 4;
+
+            _logger.Debug("Initialized listview items.");
         }
         #endregion
 
@@ -173,35 +199,9 @@ namespace KIRSmartAV.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // clear all items
-            lvTools.Items.Clear();
-            ListViewItem curItem = null;
-
-            // add items to listview
-            curItem = lvTools.Items.Add("KClamAV");
-            curItem.SubItems.Add(strings.KClamAV_Desc);
-            curItem.ImageIndex = 0;
-
-            curItem = lvTools.Items.Add("KUnhide");
-            curItem.SubItems.Add(strings.KUnhide_Desc);
-            curItem.ImageIndex = 1;
-
-            curItem = lvTools.Items.Add("KCure");
-            curItem.SubItems.Add(strings.KCure_Desc);
-            curItem.ImageIndex = 2;
-
-            curItem = lvTools.Items.Add("KProtect");
-            curItem.SubItems.Add(strings.KProtect_Desc);
-            curItem.ImageIndex = 3;
-
-            curItem = lvTools.Items.Add("KCrypt");
-            curItem.SubItems.Add(strings.KProtect_Desc);
-            curItem.ImageIndex = 4;
-
-            _logger.Debug("Initialized listview items.");
-
+            RefreshListViewItems();
             CheckStatus();
-        }
+        }        
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
