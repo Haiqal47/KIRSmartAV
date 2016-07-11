@@ -75,7 +75,7 @@ namespace KIRSmartAV.ToolsForms
             }
             catch (Exception ex)
             {
-                _logger.Error("Set attribute failed.", ex);
+                _logger.Error("Set attribute failed. Path: " + filePath, ex);
             }
         }
 
@@ -102,12 +102,16 @@ namespace KIRSmartAV.ToolsForms
         {
             var selectedDrive = (DriveData)cboDiskalepas.SelectedItem;
             if (selectedDrive == null)
+            {
                 return;
+            }
 
+            // fill up UI
             lblFree.Text = Helpers.RoundByteSize(selectedDrive.FreeSpace);
             lblTotal.Text = Helpers.RoundByteSize(selectedDrive.TotalSpace);
             lblUsed.Text = Helpers.RoundByteSize(selectedDrive.UsedSpace);
 
+            // draw UI
             capacityChart1.DrawPie(selectedDrive.TotalSpace, selectedDrive.FreeSpace);
         }
 
@@ -142,12 +146,15 @@ namespace KIRSmartAV.ToolsForms
                 cmdPerbaiki.Text = strings.StopText;
                 cmdPerbaiki.ImageIndex = 1;
 
-                _logger.Info("User start to repair attributes.");
+                _logger.Info("Uhide action started.");
             }
             else
             {
                 if (bwPerbaiki.IsBusy)
+                {
                     bwPerbaiki.CancelAsync();
+                }
+                    
                 cmdPerbaiki.Enabled = false;
             }
         }
@@ -157,12 +164,31 @@ namespace KIRSmartAV.ToolsForms
         private void bwPerbaiki_DoWork(object sender, DoWorkEventArgs e)
         {
             var args = (DriveParameters)e.Argument;
-
             bwPerbaiki.ReportProgress(99);
-            //Rename directory
-            _logger.Info("Rename no-name directory to " + AioHelpers.KCrecoveredName);
-            FastIO.SetFileAttribute(args.DriveLetter + FastIO.BlankSpaceCharacter, FileAttributes.Normal);
-            FastIO.MoveFile(args.DriveLetter + FastIO.BlankSpaceCharacter, args.DriveLetter + AioHelpers.KCrecoveredName);
+            _logger.Info("KUnhide action started. Drive: " + args.DriveLetter);
+
+            var hiddenPath = args.DriveLetter + "\\" + FastIO.BlankSpaceCharacter;
+            try
+            {
+                // set folder attribute
+                FastIO.SetFileAttribute(hiddenPath, FileAttributes.Normal, false);
+                _logger.Debug("Set no-name folder attribute to normal.");
+            }
+            catch (Exception ex)
+            {
+                _logger.Error("Can't normalize no-name folder attribute.", ex);
+            }
+
+            try
+            {
+                // rename folder
+                FastIO.MoveFile(hiddenPath, Path.Combine(args.DriveLetter, AioHelpers.KCrecoveredName), false);
+                _logger.Debug("Rename no-name directory to " + AioHelpers.KCrecoveredName);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error("Can't rename no-name folder.", ex);
+            }
 
             //Restore folder attribute
             _logger.Info("Restoring folders attribute.");
@@ -221,9 +247,13 @@ namespace KIRSmartAV.ToolsForms
             prgProgress.Value = e.ProgressPercentage;
 
             if (e.ProgressPercentage == 99)
+            {
                 prgProgress.Style = ProgressBarStyle.Marquee;
+            }    
             else
+            {
                 prgProgress.Style = ProgressBarStyle.Blocks;
+            }
         }
         #endregion
     }
