@@ -15,6 +15,7 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "KIRSmartAV-bundle", "KIRSma
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0BB0DEDC-BB43-462D-AE41-9E7FBA5F70A6}"
 	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
 		readme.md = readme.md
 	EndProjectSection
 EndProject
