@@ -109,7 +109,7 @@ namespace KIRSmartAV.ApplicationServices
             var searchOpt = _settings.QuickFixRecrusive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
             foreach (string folderPath in FastIO.EnumerateDirectories(driveRoot, searchOpt))
             {
-                if (counter.ElapsedMilliseconds > 10000)
+                if (counter.ElapsedMilliseconds > 2000)
                 {
                     // only run in 10 seconds
                     _logger.Debug("QuickFix: Operation timeout.");
@@ -118,15 +118,18 @@ namespace KIRSmartAV.ApplicationServices
 
                 // normalize folders
                 var normalizedFilePath = Path.GetFileName(folderPath).ToLowerInvariant();
-                if (normalizedFilePath != "system volume information" || normalizedFilePath != "autorun.inf")
+                foreach (string reservedName in AioHelpers.ReservedNames)
                 {
-                    FastIO.SetFileAttribute(folderPath, FileAttributes.Normal);
-                    _logger.Info("QuickFix restore attribute to Normal.");
-                }
-                else
-                {
-                    FastIO.SetFileAttribute(folderPath, FileAttributes.Hidden);
-                    _logger.Info("QuickFix restore attribute to Hidden.");
+                    if (normalizedFilePath == reservedName)
+                    {
+                        FastIO.SetFileAttribute(folderPath, FileAttributes.Hidden | FileAttributes.System);
+                        _logger.Info("QuickFix restore attribute to Hidden.");
+                    }
+                    else
+                    {
+                        FastIO.SetFileAttribute(folderPath, FileAttributes.Normal);
+                        _logger.Info("QuickFix restore attribute to Normal.");
+                    }
                 }
             }
 
