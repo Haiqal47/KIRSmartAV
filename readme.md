@@ -1,6 +1,4 @@
-# KIRSmartAV - Open Source Antivirus Project
-
-KIRSmartAV Build Status is [![Build Status](https://travis-ci.org/fahminlb33/KIRSmartAV.svg?branch=master)](https://travis-ci.org/fahminlb33/KIRSmartAV)
+# KIRSmartAV [![Build Status](https://travis-ci.org/fahminlb33/KIRSmartAV.svg?branch=master)](https://travis-ci.org/fahminlb33/KIRSmartAV)
 
 KIRSmartAV is an open source antivirus built for handling virus infection mainly spread over flashdrives. It's uses ClamAV engine to provide virus scan solution.
 
