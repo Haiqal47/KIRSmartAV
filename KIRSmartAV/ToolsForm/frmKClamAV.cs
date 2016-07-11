@@ -98,9 +98,13 @@ namespace KIRSmartAV.ToolsForms
         private void cmdStopScan_Click(object sender, EventArgs e)
         {
             if (bwPindai.IsBusy)
+            {
                 bwPindai.CancelAsync();
+            }
             if (bwPerbaiki.IsBusy)
+            {
                 bwPerbaiki.CancelAsync();
+            }
 
             cmdStopScan.Enabled = false;
         }
