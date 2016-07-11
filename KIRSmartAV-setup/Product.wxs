@@ -57,12 +57,14 @@
     
     <!-- Custom install actions -->
     <Property Id="WixShellExecTarget" Value="[#KIRSmartAV.exe]" />
-    
+
     <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
     <CustomAction Id="LaunchStartupApp" Directory="APPLICATIONROOTDIRECTORY" ExeCommand="[SystemFolder]cmd.exe /c start KIRSmartAV.exe /startup" Return="asyncNoWait" />
+    <CustomAction Id="ApplicationKill" Directory="APPLICATIONROOTDIRECTORY" ExeCommand="[SystemFolder]taskkill.exe /f /im KIRSmartAV.exe" Return="ignore" />
     
     <!-- Custom install sequence -->
     <InstallExecuteSequence>
+      <Custom Action="ApplicationKill" Before="InstallValidate" />
       <Custom Action="LaunchStartupApp" After="InstallFinalize">NOT Installed</Custom>
     </InstallExecuteSequence>
         
