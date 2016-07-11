@@ -35,6 +35,11 @@ namespace KIRSmartAV.ApplicationServices
             get { return _default; }
         }
 
+        public bool HasShownForm
+        {
+            get { return _currentViews.Count > 0; }
+        }
+
         private FormsGC()
         {
             _currentViews = new List<Form>();
