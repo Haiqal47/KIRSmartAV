@@ -33,7 +33,7 @@ namespace KIRSmartAV.Core
 
         public static bool SetFileAttribute(string path, FileAttributes attrib, bool ignoreException = true)
         {
-            if (!NativeMethods.SetFileAttributes(UNICODE_PREFIX + path, attrib))
+            if (!NativeMethods.SetFileAttributes(path, attrib))
             {
                 return true;
             }

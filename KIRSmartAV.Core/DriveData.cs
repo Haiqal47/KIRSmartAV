@@ -43,8 +43,18 @@ namespace KIRSmartAV.Core
         public DriveData(string name)
         {
             var drv = new DriveInfo(name);
+            
+            // to prevent no name drives
+            try
+            {
+                DriveVolume = drv.VolumeLabel;
+            }
+            catch
+            {
+                DriveVolume = "Removable disk";
+            }
+
             DriveLetter = drv.Name;
-            DriveVolume = drv.VolumeLabel;
             TotalSpace = drv.TotalSize;
             UsedSpace = drv.TotalSize - drv.TotalFreeSpace;
             FreeSpace = drv.TotalFreeSpace;
