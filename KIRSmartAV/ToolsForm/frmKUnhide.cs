@@ -52,13 +52,13 @@ namespace KIRSmartAV.ToolsForms
         private void RepairAttribute(string filePath)
         {
             // normalize filename
-            var normalizedFilePath = Path.GetFileName(filePath).ToLowerInvariant();
+            var normalizedFileName = Path.GetFileName(filePath).ToLowerInvariant();
             FileAttributes attrNew = FileAttributes.Normal;
 
             // check if given name is reserved as hidden
             foreach (string reservedName in AioHelpers.ReservedNames)
             {
-                if (normalizedFilePath.Contains(reservedName))
+                if (normalizedFileName == reservedName)
                 {
                     attrNew = FileAttributes.Hidden;
                 }
@@ -71,7 +71,7 @@ namespace KIRSmartAV.ToolsForms
             // change attribute
             try
             {
-                FastIO.SetFileAttribute(filePath, attrNew);
+                FastIO.SetFileAttribute(filePath, attrNew, false);
             }
             catch (Exception ex)
             {
