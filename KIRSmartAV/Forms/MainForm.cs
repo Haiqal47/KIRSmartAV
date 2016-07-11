@@ -206,11 +206,7 @@ namespace KIRSmartAV.Forms
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // override rules
-            bool cons1 = (e.CloseReason == CloseReason.ApplicationExitCall);
-            bool cons2 = (e.CloseReason == CloseReason.TaskManagerClosing);
-            bool cons3 = (e.CloseReason == CloseReason.WindowsShutDown);
-
-            if (!cons1 || !cons2 || !cons3)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
                 _logger.Debug("Form close triggered, override to hide form.");
                 e.Cancel = true;
