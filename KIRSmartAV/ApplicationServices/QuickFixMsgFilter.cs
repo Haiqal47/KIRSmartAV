@@ -107,7 +107,7 @@ namespace KIRSmartAV.ApplicationServices
 
             // restore directories
             var searchOpt = _settings.QuickFixRecrusive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-            foreach (string folderPath in FastIO.EnumerateDirectories(driveRecovered, searchOpt))
+            foreach (string folderPath in FastIO.EnumerateDirectories(driveRoot, searchOpt))
             {
                 if (counter.ElapsedMilliseconds > 10000)
                 {
