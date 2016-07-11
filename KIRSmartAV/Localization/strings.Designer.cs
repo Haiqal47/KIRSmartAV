@@ -88,6 +88,15 @@ namespace KIRSmartAV.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t show program settings because there is opened form(s)..
+        /// </summary>
+        internal static string CantShowSettings {
+            get {
+                return ResourceManager.GetString("CantShowSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deactivate.
         /// </summary>
         internal static string DeactivateText {

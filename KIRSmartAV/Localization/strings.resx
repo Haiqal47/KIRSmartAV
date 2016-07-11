@@ -258,4 +258,7 @@
   <data name="ScanEngineError" xml:space="preserve">
     <value>Libclamav encoutered an error. Scan aborted.</value>
   </data>
+  <data name="CantShowSettings" xml:space="preserve">
+    <value>Can't show program settings because there is opened form(s).</value>
+  </data>
 </root>

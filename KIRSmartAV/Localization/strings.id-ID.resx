@@ -258,4 +258,7 @@
   <data name="ScanEngineError" xml:space="preserve">
     <value>Libclamav mengalami kegagalan. Pemindaian dibatalkan.</value>
   </data>
+  <data name="CantShowSettings" xml:space="preserve">
+    <value>Tidak dapat membuka pengaturan karena ada jendela piranti yang terbuka.</value>
+  </data>
 </root>

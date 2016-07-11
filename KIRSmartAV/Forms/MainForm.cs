@@ -36,6 +36,7 @@ namespace KIRSmartAV.Forms
         private static Settings _appSettings = Settings.Default;
         private QuickFixMsgFilter _quickFixFilter = new QuickFixMsgFilter();
         private bool _antivirusCapability = true;
+        private FormsGC _formsHandler = FormsGC.Default;
 
         public MainForm()
         {
@@ -84,9 +85,17 @@ namespace KIRSmartAV.Forms
 
         private void cmdSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            _logger.Info("Showing \"SettingsForm\"");
-            using (var vw = new SettingsForm())
-                vw.ShowDialog();
+            if (_formsHandler.HasShownForm)
+            {
+                MessageBox.Show(strings.CantShowSettings, strings.KIRSmartAVTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else
+            {
+                _logger.Info("Showing \"SettingsForm\"");
+                using (var vw = new SettingsForm())
+                    vw.ShowDialog();
+            }
         }
 
         private void cmdMinimize_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -122,7 +131,7 @@ namespace KIRSmartAV.Forms
                 case 0:
                     if (_antivirusCapability)
                     {
-                        FormsGC.Default.ShowForm(new frmKClamAV());
+                        _formsHandler.ShowForm(new frmKClamAV());
                     }
                     else
                     {
@@ -132,11 +141,11 @@ namespace KIRSmartAV.Forms
                     break;
 
                 case 1:
-                    FormsGC.Default.ShowForm(new frmKUnhide());
+                    _formsHandler.ShowForm(new frmKUnhide());
                     break;
 
                 case 2:
-                    FormsGC.Default.ShowForm(new frmKCure());
+                    _formsHandler.ShowForm(new frmKCure());
                     break;
 
                 case 3:
@@ -148,12 +157,12 @@ namespace KIRSmartAV.Forms
                     }
                     else
                     {
-                        FormsGC.Default.ShowForm(new frmKProtect());
+                        _formsHandler.ShowForm(new frmKProtect());
                     }
                     break;
 
                 case 4:
-                    FormsGC.Default.ShowForm(new frmKCryptor());
+                    _formsHandler.ShowForm(new frmKCryptor());
                     break;
             }
 
