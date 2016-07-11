@@ -111,7 +111,7 @@ namespace KIRSmartAV.ToolsForms
         {
             // prepare
             var scanPath = e.Argument.ToString();
-            var scanFileList = new List<FileData>();
+            var scanFileList = new List<string>();
             double progressPercentage = 0.0;
             
             // iterate to count
@@ -128,7 +128,7 @@ namespace KIRSmartAV.ToolsForms
 
                 if (!currentFile.Name.EndsWith(AioHelpers.VirusExtension))
                 {
-                    scanFileList.Add(currentFile);
+                    scanFileList.Add(currentFile.FullPath);
                 }
             }
 
@@ -164,7 +164,7 @@ namespace KIRSmartAV.ToolsForms
                         }
 
                         // open file descriptor
-                        using (FileEntry currentFile = FileEntry.OpenFile(scanFileList[i].FullPath))
+                        using (FileEntry currentFile = FileEntry.OpenFile(scanFileList[i]))
                         {
                             progressPercentage = (i + 1) / (double)fileCount * 100;
 
@@ -255,11 +255,6 @@ namespace KIRSmartAV.ToolsForms
             // prepare variables
             var itemsCount = Convert.ToInt32(e.Argument);
             var crpytoService = new FileEncoder();
-            var chestDir = AioHelpers.GetChestFolder();
-
-            // always create directory
-            Directory.CreateDirectory(chestDir);
-            _logger.Debug("Created chest folder.");
 
             for (int i = 0; i < itemsCount; i++)
             {
@@ -270,8 +265,7 @@ namespace KIRSmartAV.ToolsForms
                 // encode first
                 try
                 {
-                    var movedName = AioHelpers.GenerateChestFilename(filePath, chestDir);
-                    crpytoService.EncryptFile(filePath, movedName);
+                    crpytoService.EncryptFile(filePath, AioHelpers.GenerateChestFilePath(filePath));
                     imgIndex = 1;
                 }
                 catch (Exception ex)
