@@ -51,20 +51,26 @@ namespace KIRSmartAV.ApplicationServices
         
         public static string GetChestFolder()
         {
+            string chestDir = "";
             if (Properties.Settings.Default.ChestPath == "[UNSET]")
             {
-                return DefaultChestDirectory;
+                chestDir = DefaultChestDirectory;
             }
             else
             {
-                return Properties.Settings.Default.ChestPath;
+                chestDir = Properties.Settings.Default.ChestPath;
             }
+
+            // always create directory
+            Directory.CreateDirectory(chestDir);
+            return chestDir;
         }
 
-        public static string GenerateChestFilename(string sourceFilePath, string outputPath)
+        public static string GenerateChestFilePath(string sourceFilePath)
         {
             var extension = Path.GetExtension(sourceFilePath);
             var fname = Path.GetFileNameWithoutExtension(sourceFilePath);
+            var outputPath = GetChestFolder();
             string outputFilePath = "";
 
             for (int i = 0; i < 100; i++)
