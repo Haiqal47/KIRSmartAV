@@ -33,6 +33,37 @@ namespace KIRSmartAV.Core
         private const string REGISTRY_INI_PATH = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\IniFileMapping\\Autorun.inf";
         private const string REGISTRY_EDITOR_PATH = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System";
 
+        #region INI Module
+        public void EnableIni()
+        {
+            try
+            { 
+                Registry.LocalMachine.DeleteSubKeyTree(REGISTRY_INI_PATH);
+            }
+            catch { }
+        }
+
+        public void DisableIni()
+        {
+            try
+            {
+                using (var kunci = Registry.LocalMachine.CreateSubKey(REGISTRY_INI_PATH, RegistryKeyPermissionCheck.ReadWriteSubTree))
+                    kunci.SetValue("", "@SYS:DoesNotExist", RegistryValueKind.String);
+            }
+            catch { }
+        }
+
+        public bool IsIniEnabled()
+        {
+            try
+            {
+                using (var kunci = Registry.LocalMachine.CreateSubKey(REGISTRY_INI_PATH, RegistryKeyPermissionCheck.ReadWriteSubTree))
+                    return (kunci.GetValue("") == null);
+            }
+            catch { return false; }
+        }
+        #endregion
+
         #region Autorun Module
         public void EnableAutorun()
         {
@@ -63,17 +94,12 @@ namespace KIRSmartAV.Core
         {
             try
             {
-                bool enabled = false;
                 using (var kunci = Registry.CurrentUser.CreateSubKey(REGISTRY_AUTORUN_PATH, RegistryKeyPermissionCheck.ReadWriteSubTree))
                 {
                     var obj = kunci.GetValue("NoDriveTypeAutoRun");
-                    enabled = (obj == null || (int)obj == 145);
+                    return (obj == null || (int)obj == 145);
                 }
 
-                using (var kunci = Registry.LocalMachine.CreateSubKey(REGISTRY_INI_PATH, RegistryKeyPermissionCheck.ReadWriteSubTree))
-                    enabled &= (kunci.GetValue("") == null);
-
-                return enabled;
             }
             catch { return true; }
         }

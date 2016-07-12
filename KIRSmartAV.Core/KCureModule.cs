@@ -66,7 +66,11 @@ namespace KIRSmartAV.Core
         public void InstallAntiAutorun()
         {
             Helpers.RunAndWait(@"/c mkdir\\.\" + Helpers.TrimDriveName(_letter) + @"\autorun.inf\con\nul");
-            File.SetAttributes(Path.Combine(_letter, "autorun.inf"), FileAttributes.Hidden);
+            try
+            {
+                File.SetAttributes(Path.Combine(_letter, "autorun.inf"), FileAttributes.Hidden | FileAttributes.System);
+            }
+            catch { }
         }
 
         public void UninstallAntiAutorun()
@@ -74,7 +78,6 @@ namespace KIRSmartAV.Core
             try
             {
                 File.SetAttributes(Path.Combine(_letter, "autorun.inf"), FileAttributes.Normal);
-                File.Delete(Path.Combine(_letter, "autorun.inf"));
             }
             catch { }
             Helpers.RunAndWait(@"/c rd\\.\" + Helpers.TrimDriveName(_letter) + @"\autorun.inf\con\nul");
