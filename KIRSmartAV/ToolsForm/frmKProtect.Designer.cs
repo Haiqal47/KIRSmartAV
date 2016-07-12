@@ -42,6 +42,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmdIniToggle = new System.Windows.Forms.LinkLabel();
+            this.lbINI = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // imgTexts
@@ -49,8 +53,9 @@
             this.imgTexts.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgTexts.ImageStream")));
             this.imgTexts.TransparentColor = System.Drawing.Color.Transparent;
             this.imgTexts.Images.SetKeyName(0, "circled_play-24.png");
-            this.imgTexts.Images.SetKeyName(1, "registry_editor-24.png");
-            this.imgTexts.Images.SetKeyName(2, "windows_logo_copyrighted-24.png");
+            this.imgTexts.Images.SetKeyName(1, "code_file-24.png");
+            this.imgTexts.Images.SetKeyName(2, "code_file-24.png");
+            this.imgTexts.Images.SetKeyName(3, "registry_editor-24.png");
             // 
             // cmdApplyHotfix
             // 
@@ -116,10 +121,37 @@
             this.label3.ImageList = this.imgTexts;
             this.label3.Name = "label3";
             // 
+            // cmdIniToggle
+            // 
+            resources.ApplyResources(this.cmdIniToggle, "cmdIniToggle");
+            this.cmdIniToggle.Name = "cmdIniToggle";
+            this.cmdIniToggle.TabStop = true;
+            this.cmdIniToggle.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.cmdIniToggle_LinkClicked);
+            // 
+            // lbINI
+            // 
+            resources.ApplyResources(this.lbINI, "lbINI");
+            this.lbINI.Name = "lbINI";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ImageList = this.imgTexts;
+            this.label4.Name = "label4";
+            // 
             // frmKProtect
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmdIniToggle);
+            this.Controls.Add(this.lbINI);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cmdApplyHotfix);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
@@ -155,5 +187,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel cmdIniToggle;
+        private System.Windows.Forms.Label lbINI;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }

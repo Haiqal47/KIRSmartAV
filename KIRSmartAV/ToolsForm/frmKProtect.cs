@@ -78,6 +78,20 @@ namespace KIRSmartAV.ToolsForms
                 _logger.Info("KProtect status: Autorun-Disabled.");
             }
 
+            //Check ini
+            if (_module.IsIniEnabled())
+            {
+                lbINI.Text = strings.ActiveText;
+                cmdIniToggle.Text = strings.DeactivateText;
+                _logger.Info("KProtect status: IniMapping-Enabled.");
+            }
+            else
+            {
+                lbINI.Text = strings.DeactiveText;
+                cmdIniToggle.Text = strings.ActivateText;
+                _logger.Info("KProtect status: IniMapping-Disabled.");
+            }
+
             //Check regedit
             if (_module.IsRegeditEnabled())
             {
@@ -101,20 +115,43 @@ namespace KIRSmartAV.ToolsForms
         private void cmdAutorunToggle_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (_module.IsAutorunEnabled())
+            {
                 _module.DisableAutorun();
+            }
             else
+            {
                 _module.EnableAutorun();
+            }
 
             CheckStatus();
             _logger.Info("Autorun status changed.");
         }
 
+        private void cmdIniToggle_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (_module.IsIniEnabled())
+            {
+                _module.DisableIni();
+            }
+            else
+            {
+                _module.EnableIni();
+            }
+
+            CheckStatus();
+            _logger.Info("Initialization File Mapping changed.");
+        }
+
         private void cmdRegeditToggle_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (_module.IsRegeditEnabled())
+            {
                 _module.DisableRegedit();
+            }
             else
+            {
                 _module.EnableRegedit();
+            }
 
             CheckStatus();
             _logger.Info("Regedit status changed.");

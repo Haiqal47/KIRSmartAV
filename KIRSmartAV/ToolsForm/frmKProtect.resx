@@ -118,6 +118,523 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cmdAutorunToggle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 148</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 29</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblAutorun.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;cmdAutorunToggle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cmdIniToggle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbINI.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="cmdIniToggle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 95</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cmdAutorunToggle.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmdRegeditToggle.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblRegedit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 32</value>
+  </data>
+  <data name="&gt;&gt;imgTexts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblAutorun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 29</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>KProtect</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 29</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="lblRegedit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="lblAutorun.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Underline</value>
+  </data>
+  <data name="label4.ImageIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 47</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="cmdApplyHotfix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 15</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 32</value>
+  </data>
+  <data name="lbINI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="lblRegedit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 158</value>
+  </data>
+  <data name="&gt;&gt;lbINI.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cmdApplyHotfix.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>     Autorun and Autoplay</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Autorun is a Windows feature that lets "autorun.inf" commands executed when plugged into computer.</value>
+  </data>
+  <data name="label13.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="cmdRegeditToggle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="cmdAutorunToggle.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;cmdAutorunToggle.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbINI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 95</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="imgTexts.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACS
+        IgAAAk1TRnQBSQFMAgEBBAEAAWgBAAFsAQABGAEAARgBAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFg
+        AwABMAMAAQEBAAEgBgABSP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
+        /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wAoAAFSAU8BSwGAAVIBTwFLAYABUgFPAUsBgAFS
+        AU8BSwGAAVIBTwFLAYABUgFPAUsBgAFSAU8BSwGAAVIBTwFLAYABUgFPAUsBgAFSAU8BSwGAAVIBTwFL
+        AYABUgFPAUsBgAFSAU8BSwGAAVIBTwFLAYABUgFPAUsBgAFSAU8BSwGA7AADAwEEAzABTAJGAUUBfwNW
+        AbMBfQFqAVMB5gF9AWoBUwHmA1YBswJHAUYBgAMwAUwDAwEELAAB+QHKAZAB/wH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5
+        AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/+gAAx0BKQFeAVsBWAHL
+        AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGW
+        ARkB/wFeAVsBWAHLAx0BKSgAAfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5
+        AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8cAAJHAUYBgAJHAUYBgAJHAUYBgAJHAUYBgAJaAVgBwAJH
+        AUYBgAJHAUYBgAJHAUYBgAJaAVgBwAJHAUYBgAJHAUYBgAJHAUYBgAJHAUYBgJMAAQEDQQFyAbsBhgE3
+        AfcB8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHz
+        AZYBGQH/AfMBlgEZAf8B8wGWARkB/wG7AYYBNwH3A0EBcgMAAQEgAAH5AcoBkAH/AfkBygGQAf8B+QHK
+        AZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wHcAYwBNwH/AfQBvwGBAf8B+QHKAZAB/wH5AcoBkAH/
+        AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/HAABjwGDAQAB/wGx
+        AZ8BAAH/AbEBnwEAAf8BsQGfAQAB/wGPAYMBAAH/AbEBnwEAAf8BsQGfAQAB/wGxAZ8BAAH/AY8BgwEA
+        Af8BsQGfAQAB/wGxAZ8BAAH/AbEBnwEAAf8BjwGDAQAB/0wAAyMBNAFQAlIBowFGAX0BjwHsAUcBdwGH
+        AeoBVwJZAb8BQQJCAXMDDwEUKAADQQFyAfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGW
+        ARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/
+        AfMBlgEZAf8B8wGWARkB/wNBAXIgAAH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/wHgAZQBQgH/AeoBqgFhAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5
+        AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/HAABjwGDAQAB/wHUAbwBAAH/AdQBvAEAAf8B1AG8
+        AQAB/wGPAYMBAAH/AdQBvAEAAf8B1AG8AQAB/wHUAbwBAAH/AY8BgwEAAf8B1AG8AQAB/wHUAbwBAAH/
+        AdQBvAEAAf8BjwGDAQAB/0QAAxMBGgMtAUUBAAHBAv8BAAHBAv8BAAHBAv8BAAHBAv8BAAHBAv8BAAHB
+        Av8BRAJFAXwkAAMdASkBuwGGATcB9wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZ
+        Af8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHz
+        AZYBGQH/AfMBlgEZAf8BuwGGATcB9wMdASkcAAH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/
+        AfgByQGOAf8B9QHCAYQB/wHqAakBYAH/AeEBlQFDAf8B+QHKAZAB/wH5AcoBkAH/AfUBwgGEAf8B+AHJ
+        AY4B/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/HAABjwGDAQAB/wHUAbwBAAH/AdQBvAEA
+        Af8B1AG8AQAB/wGPAYMBAAH/AdQBvAEAAf8B1AG8AQAB/wHUAbwBAAH/AY8BgwEAAf8B1AG8AQAB/wHU
+        AbwBAAH/AdQBvAEAAf8BjwGDAQAB/ywAA1ABnQM/AW0DIgEyAx0BKgI2ATUBWAFcAVsBVwHHAXYBaQFS
+        AeEDCgENAR0BpAHQAfoBAAHBAv8BAAHBAv8BAAHBAv8BAAHBAv8BAAHBAv8BVwFcAV0BxSAAAwMBBAFe
+        AVsBWAHLAfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B9QGqAUMB/wH0AZ0BJwH/AfMBlgEZ
+        Af8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHz
+        AZYBGQH/AfMBlgEZAf8BXgFbAVgBywMDAQQYAAH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH4AckBjgH/
+        Ad8BkgE+Af8B4wGaAUoB/wH0Ab8BgAH/AdcBgAElAf8B+QHKAZAB/wH5AcoBkAH/AeMBmgFKAf8B3wGS
+        AT4B/wH4AckBjgH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/HAABjwGDAQAB/wGgAZEBAAH/AaABkQEA
+        Af8BoAGRAQAB/wGPAYMBAAH/AaABkQEAAf8BoAGRAQAB/wGgAZEBAAH/AY8BgwEAAf8BsQGfAQAB/wGx
+        AZ8BAAH/AbEBnwEAAf8BjwGDAQAB/ywAA1ABmgH0AakBAAH/AfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/
+        AfQBqQEAAf8B9AGpAQAB/wMfASwBVwJaAb0BAAHBAv8BAAHBAv8BAAHBAv8BAAHBAv8BAAHBAv8BDwGw
+        AdgB/AMNAREcAAMwAUwB8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfkBywGQ
+        Af8B/gH5AfIB/wH5AcsBkAH/AfQBnQEnAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHz
+        AZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8DMAFMGAAB+QHKAZAB/wH5AcoBkAH/
+        AfgByQGOAf8B3wGSAT4B/wHfAZIBPgH/AfgByQGOAf8B+QHKAZAB/wHWAYABJQH/AfQBvwGBAf8B+QHK
+        AZAB/wH4AckBjgH/Ad8BkgE+Af8B3wGSAT4B/wH4AckBjgH/AfkBygGQAf8B+QHKAZAB/xwAAY8BgwEA
+        Af8BoAGRAQAB/wGgAZEBAAH/AaABkQEAAf8BjwGDAQAB/wGgAZEBAAH/AaABkQEAAf8BoAGRAQAB/wGP
+        AYMBAAH/AkcBRgGAAkcBRgGAAkcBRgGAAkcBRgGALAADMgFQAfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/
+        AfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/A0IBdgFBAkIBcwEAAcEC/wEAAcEC/wEAAcEC/wEAAcEC/wEA
+        AcEC/wEAAcEC/wM1AVccAAJGAUUBfwHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZ
+        Af8B+QHLAZAJ/wH+AfkB8gH/AfkBywGQAf8B9AGdAScB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHz
+        AZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AkYBRQF/GAAB+QHKAZAB/wH4AckBjgH/Ad8BkgE+
+        Af8B3wGSAT4B/wH4AckBjgH/AfkBygGQAf8B+QHKAZAB/wHgAZUBQgH/AeoBqgFhAf8B+QHKAZAB/wH5
+        AcoBkAH/AfgByQGOAf8B3wGSAT4B/wHfAZIBPgH/AfgByQGOAf8B+QHKAZAB/xwAAY8BgwEAAf8B1AG8
+        AQAB/wHUAbwBAAH/AdQBvAEAAf8BjwGDAQAB/wHUAbwBAAH/AdQBvAEAAf8B1AG8AQAB/wGPAYMBAAH/
+        EAADIwE0AzwBZgMUARsgAAMKAQ0ByQGYARsB+gH0AakBAAH/AfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/
+        AfQBqQEAAf8CWgFYAcADHQEqAQABwQL/AQABwQL/AQABwQL/AQABwQL/AQABwQL/AQABwQL/A1EBoBwA
+        A1YBswHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B+QHLAZAR/wH+AfkB8gH/
+        AfkBywGQAf8B9AGdAScB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8DVgGz
+        GAAB+QHKAZAB/wH4AckBjgH/Ad8BkgE+Af8B3wGSAT4B/wH4AckBjgH/AfkBygGQAf8B+QHKAZAB/wHq
+        AaoBYQH/AeABlQFCAf8B+QHKAZAB/wH5AcoBkAH/AfgByQGOAf8B3wGSAT4B/wHfAZIBPgH/AfgByQGO
+        Af8B+QHKAZAB/xwAAY8BgwEAAf8B1AG8AQAB/wHUAbwBAAH/AdQBvAEAAf8BjwGDAQAB/wHUAbwBAAH/
+        AdQBvAEAAf8B1AG8AQAB/wGPAYMBAAH/EAACUQFPAZwBiAF8AR8B+AF9AXkBHwH4AWMBYQFWAdsDRAF5
+        HAACWgFXAb0B9AGpAQAB/wH0AakBAAH/AfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/Ac0BlQETAfsDCwEP
+        AVgBaAFtAdoDUQGiAyMBMwMGAQgDCQEMAykBPgM8AWYcAAF9AWoBUwHmAfMBlgEZAf8B8wGWARkB/wHz
+        AZYBGQH/AfMBlgEZAf8B8wGWARkB/wH5AcsBkBn/Af4B+QHyAf8B+QHLAZAB/wH0AZ0BJwH/AfMBlgEZ
+        Af8B8wGWARkB/wHzAZYBGQH/AX0BagFTAeYYAAH5AcoBkAH/AfkBygGQAf8B+AHJAY4B/wHfAZIBPgH/
+        Ad8BkgE+Af8B+AHJAY4B/wH5AcoBkAH/AfQBvwGBAf8B1gGAASUB/wH5AcoBkAH/AfgByQGOAf8B3wGS
+        AT4B/wHfAZIBPgH/AfgByQGOAf8B+QHKAZAB/wH5AcoBkAH/HAABjwGDAQAB/wGgAZEBAAH/AaABkQEA
+        Af8BoAGRAQAB/wGPAYMBAAH/AbEBnwEAAf8BsQGfAQAB/wGxAZ8BAAH/AY8BgwEAAf8QAAFwAWwBQwHs
+        AckBswEAAf8B0wG7AQAB/wGwAZ4BAAH/AlcBVQG6HAACQgFBAXMB9AGpAQAB/wH0AakBAAH/AfQBqQEA
+        Af8B9AGpAQAB/wH0AakBAAH/AeUBmgEDAf4DKwFCAwYBCAMnAToBUgJUAaYBTAGHAWwB8wFNAYgBagHy
+        AVkBWwFZAccDQQFyAw0BEhgAAX0BagFTAeYB8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHz
+        AZYBGQH/AfkBywGQGf8B/gH5AfIB/wH5AcsBkAH/AfQBnQEnAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZ
+        Af8BfQFqAVMB5hgAAfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfgByQGOAf8B3wGSAT4B/wHjAZoBSgH/
+        AfkBygGQAf8B+QHKAZAB/wHXAYABJQH/AfQBvwGAAf8B4wGaAUoB/wHfAZIBPgH/AfgByQGOAf8B+QHK
+        AZAB/wH5AcoBkAH/AfkBygGQAf8cAAGPAYMBAAH/AaABkQEAAf8BoAGRAQAB/wGgAZEBAAH/AY8BgwEA
+        Af8CRwFGAYACRwFGAYACRwFGAYACRwFGAYAMAAMgAS4BfAFwASoB9QHUAbwBAAH/AdQBvAEAAf8BggF7
+        ATIB8wI6ATkBYBwAAwcBCgM1AVYCUwFPAaUBZAFfAVgB0gFlAWABWAHUA0oBjQMZASMDBAEGAy0BRgE6
+        AbMBdAH/AToBswF0Af8BOgGzAXQB/wE6AbMBdAH/AToBswF0Af8BOgGzAXQB/wNEAXoYAANWAbMB8wGW
+        ARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfkBywGQEf8B/gH5AfIB/wH5AcsBkAH/
+        AfQBnQEnAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/A1YBsxgAAfkBygGQ
+        Af8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+AHJAY4B/wH1AcIBhAH/AfkBygGQAf8B+QHKAZAB/wHh
+        AZUBQwH/AeoBqQFgAf8B9QHCAYQB/wH4AckBjgH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQ
+        Af8cAAGPAYMBAAH/AdQBvAEAAf8B1AG8AQAB/wHUAbwBAAH/AY8BgwEAAf8cAAMtAUUBawFpAUoB5wF7
+        AXMBLAH0AZABiwEcAfkBhQF6ASQB9wMQARYgAANMAZMBPgI/AWwDIAEvAwUBBwMiATEBRgJHAYEBWwFc
+        AWUB1AMJAQwBQwGWAWoB+QE6AbMBdAH/AToBswF0Af8BOgGzAXQB/wE6AbMBdAH/AToBswF0Af8BWQJb
+        AcQYAAJGAUUBfwHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B+QHLAZAJ/wH+
+        AfkB8gH/AfkBywGQAf8B9AGdAScB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZ
+        Af8B8wGWARkB/wHzAZYBGQH/AkYBRQF/GAAB+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5
+        AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AeoBqgFhAf8B4AGUAUIB/wH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/xwAAY8BgwEAAf8B1AG8AQAB/wHUAbwBAAH/
+        AdQBvAEAAf8BjwGDAQAB/wwAAxIBGAMdASoQAAMcASgDQwF4A1ABnSQAA1EBogEaAU8C/wEaAU8C/wEi
+        AVcB8AH+ARoBTwL/ARoBTwL/ARoBTwL/Ax0BKgFXAloBvQE6AbMBdAH/AToBswF0Af8BOgGzAXQB/wE6
+        AbMBdAH/AToBswF0Af8BOQGgAXQB/AMNAREUAAMwAUwB8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGW
+        ARkB/wHzAZYBGQH/AfkBywGQAf8B/gH5AfIB/wH5AcsBkAH/AfQBnQEnAf8B8wGWARkB/wHzAZYBGQH/
+        AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8DMAFM
+        GAAB+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5
+        AcoBkAH/AfQBvwGBAf8B3AGMATcB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/xwAAY8BgwEAAf8BsQGfAQAB/wGxAZ8BAAH/AbEBnwEAAf8BjwGDAQAB/wgAAysBQgFw
+        AWsBPAHvAWoBaQFOAeYDCgEOPAABNQI2AVgBGgFPAv8BGgFPAv8BGgFPAv8BGgFPAv8BGgFPAv8BGgFP
+        Av8BQQJCAXMDQgF0AToBswF0Af8BOgGzAXQB/wE6AbMBdAH/AToBswF0Af8BOgGzAXQB/wE6AbMBdAH/
+        AzUBVxQAAwMBBAFeAVsBWAHLAfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B9QGqAUMB/wH0
+        AZ0BJwH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZ
+        Af8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8BXgFbAVgBywMDAQQYAAH5AcoBkAH/AfkBygGQAf8B+QHK
+        AZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/
+        AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/HAACRwFGAYACRwFG
+        AYACRwFGAYACRwFGAYACRwFGAYADAQECAkgBRwGDAXwBcAEqAfUBwwGuAQAB/wGOAYcBJAH3AlcBVQG3
+        CAADKgFAAkcBRgGAAkcBRgGAAkcBRgGAAkcBRgGAIAADDQESASoBSQHYAfwBGgFPAv8BGgFPAv8BGgFP
+        Av8BGgFPAv8BGgFPAv8CVwFaAb0DHgErAToBswF0Af8BOgGzAXQB/wE6AbMBdAH/AToBswF0Af8BOgGz
+        AXQB/wE6AbMBdAH/AVECUgGhGAADHQEpAbsBhgE3AfcB8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGW
+        ARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/
+        AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AbsBhgE3AfcDHQEpHAAB+QHKAZAB/wH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH8
+        AeABuQH/Af4B9QHhAf8B/gH1AeEB/wH+AfUB4QH/Af0B6QHKAf8BvgGiAX8B4TAAAw0BEgFxAWsBSAHr
+        AboBpwEAAf8B1AG8AQAB/wHSAbsBAAH/AX8BegEfAfgCQAE/AW4EAAJHAUYBgAGgAZEBAAH/AbEBnwEA
+        Af8BsQGfAQAB/wGPAYMBAAH/JAACWAFdAcYBGgFPAv8BGgFPAv8BGgFPAv8BGgFPAv8BGgFPAv8BKQFO
+        AdAB+gMKAQ0BWgFmAWAB3gFTAlQBrAMoAT0DDQESAxMBGgM1AVUDSgGLHAADQQFyAfMBlgEZAf8B8wGW
+        ARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/
+        AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wNBAXIgAAH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5
+        AcoBkAH/AfwB4AG5Af8B/gH1AeEB/wH+AfUB4QH/Af0B6QHKAf8BvgGiAX8B4QMXASA0AAMnAToBfAFw
+        ASoB9QHIAbIBAAH/AYUBewEjAfYBYwFhAVYB2wMaASUEAAJHAUYBgAGxAZ8BAAH/AdQBvAEAAf8B1AG8
+        AQAB/wGPAYMBAAH/JAABRAJFAXwBGgFPAv8BGgFPAv8BGgFPAv8BGgFPAv8BGgFPAv8BGgFPAv8DLQFF
+        AwgBCzcAAQEDQQFyAbsBhgE3AfcB8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/
+        AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wG7AYYBNwH3A0EBcgMAAQEgAAH5
+        AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/wH5AcoBkAH/AfwB4AG5Af8B/gH1AeEB/wH9AekBygH/Ab4BogF/AeEDFwEgPAADQgF2
+        AYEBfwEAAf4DUQGiAwYBCAgAAkcBRgGAAbEBnwEAAf8B1AG8AQAB/wHUAbwBAAH/AY8BgwEAAf8kAAMP
+        ARQBQQJCAXMBVwFYAVkBvwFNAVwBhwHqAU0BWQGPAewBUAJSAaMDIwE0RAADHQEpAV4BWwFYAcsB8wGW
+        ARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/AfMBlgEZAf8B8wGWARkB/wHzAZYBGQH/
+        AV4BWwFYAcsDHQEpKAAB+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQ
+        Af8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH8AeABuQH/Af0B6QHKAf8BvgGiAX8B4QMX
+        ASBEAAMqAUEQAAJHAUYBgAGPAYMBAAH/AY8BgwEAAf8BjwGDAQAB/wGPAYMBAAH/iAADAwEEAzABTAJG
+        AUUBfwNWAbMBfQFqAVMB5gF9AWoBUwHmA1YBswJHAUYBgAMwAUwDAwEELAAB+QHKAZAB/wH5AcoBkAH/
+        AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHKAZAB/wH5AcoBkAH/AfkBygGQAf8B+QHK
+        AZAB/wH6AdUBpAH/Ab4BogF/AeEDFwEg/wBNAAFSAU8BSwGAAVIBTwFLAYABUgFPAUsBgAFSAU8BSwGA
+        AVIBTwFLAYABUgFPAUsBgAFSAU8BSwGAAVIBTwFLAYABUgFPAUsBgAFSAU8BSwGAAVIBTwFLAYADFwEg
+        /wD/AGIAAUIBTQE+BwABPgMAASgDAAFgAwABMAMAAQEBAAEBBQABQAECFgAD//8AIgAP/wHwAQABDwb/
+        Af4BAAF/AfABAAEPBv8B/AEAAT8B8AEAAQ8B4AEABP8B8AEAAQ8B8AEAAQ8B4AEAAv8B4AE/AfABAAEP
+        AfABAAEPAeABAAL/AYABPwHgAQABBwHwAQABDwHgAQAB/wHgAQABPwHAAQABAwHwAQABDwHgAQAB/wHg
+        AQABHwHAAQABAwHwAQABDwHgAQAB/wHgAQABHwHAAQABAwHwAQABDwHgAQ8BHwHgAQABHwHAAQABAwHw
+        AQABDwHgAQ8BBwHwAQABHwHAAQABAwHwAQABDwHgAQ8BBwHwAQABDwHAAQABAwHwAQABDwHgAQ4BBwHw
+        AQABDwHAAQABAwHwAQABDwHgAf4BBwH4AQABDwHAAQABAwHwAQABDwHgAecBjwH4AQABBwHAAQABAwHw
+        AQABDwHgAcMB/wH4AQABBwHAAQABAwHwAQABDwHgAQMBBwH4AQABBwHgAQABBwHwAQABDwH/AQEBBwH8
+        AQABBwHwAQABDwHwAQABDwH/AYEBBwH8AQEB/wHwAQABDwHwAQABHwH/AcMBBwH8AQcB/wH8AQABPwHw
+        AQABPwH/Ae8BBwP/Af4BAAF/AfABAAF/Cf8B8AEAE/8WAAs=
+</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cmdIniToggle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="lblAutorun.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>     Registry Editor</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Windows is updated frequently to avoid security leaks and other improvements. This package contains patch to fix autorun vulnerabilities. (KB971029)</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label3.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbINI.Name" xml:space="preserve">
+    <value>lbINI</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 84</value>
+  </data>
+  <data name="lblAutorun.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;cmdApplyHotfix.Name" xml:space="preserve">
+    <value>cmdApplyHotfix</value>
+  </data>
+  <data name="&gt;&gt;lblAutorun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cmdAutorunToggle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmKProtect</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 216</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 29</value>
+  </data>
+  <data name="label4.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cmdRegeditToggle.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cmdIniToggle.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="cmdApplyHotfix.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="cmdIniToggle.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="cmdRegeditToggle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cmdAutorunToggle.Name" xml:space="preserve">
+    <value>cmdAutorunToggle</value>
+  </data>
+  <data name="cmdIniToggle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;lblRegedit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmdRegeditToggle.Name" xml:space="preserve">
+    <value>cmdRegeditToggle</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 47</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="&gt;&gt;imgTexts.Name" xml:space="preserve">
+    <value>imgTexts</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;cmdRegeditToggle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblRegedit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Underline</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 30</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="cmdRegeditToggle.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbINI.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Registry editor is an application to manipulate registry entries in order to change system behavior.</value>
+  </data>
+  <data name="&gt;&gt;cmdRegeditToggle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>     Windows Update</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 18</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="cmdApplyHotfix.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cmdIniToggle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cmdIniToggle.Name" xml:space="preserve">
+    <value>cmdIniToggle</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="lblRegedit.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;lblRegedit.Name" xml:space="preserve">
+    <value>lblRegedit</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Initialization file mapping disables certain section on autorun.inf function. It can protect from malware spreading.</value>
+  </data>
+  <data name="label3.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="lblRegedit.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lbINI.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAgAICAQAAEABADoAgAAhgAAABAQEAABAAQAKAEAAG4DAAAwMAAAAQAIAKgOAACWBAAAICAAAAEA
@@ -515,454 +1032,110 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/gAAA/+MAAP/jAAA=
 </value>
   </data>
-  <data name="&gt;&gt;cmdAutorunToggle.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 47</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cmdApplyHotfix.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="lblRegedit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 15</value>
-  </data>
-  <data name="&gt;&gt;cmdRegeditToggle.ZOrder" xml:space="preserve">
+  <data name="label13.ImageIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="cmdRegeditToggle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 15</value>
+  <data name="lbINI.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 32</value>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 245</value>
   </data>
-  <data name="cmdAutorunToggle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;lbINI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 177</value>
   </data>
   <data name="&gt;&gt;lblAutorun.Name" xml:space="preserve">
     <value>lblAutorun</value>
   </data>
-  <data name="lblAutorun.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 29</value>
   </data>
-  <data name="&gt;&gt;cmdRegeditToggle.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lbINI.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Underline</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmKProtect</value>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Windows is updated frequently to avoid security leaks and other improvements. This package contains patch to fix autorun vulnerabilities. (KB971029)</value>
-  </data>
-  <data name="&gt;&gt;lblRegedit.Name" xml:space="preserve">
-    <value>lblRegedit</value>
-  </data>
-  <data name="cmdRegeditToggle.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblAutorun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;lblRegedit.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cmdApplyHotfix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>9</value>
   </data>
   <data name="cmdRegeditToggle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 99</value>
+    <value>282, 158</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 89</value>
+  <data name="cmdApplyHotfix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 226</value>
   </data>
-  <data name="&gt;&gt;imgTexts.Name" xml:space="preserve">
-    <value>imgTexts</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 113</value>
   </data>
-  <data name="lblRegedit.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="&gt;&gt;cmdApplyHotfix.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>     Registry Editor</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 18</value>
-  </data>
-  <data name="&gt;&gt;cmdApplyHotfix.Name" xml:space="preserve">
-    <value>cmdApplyHotfix</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 29</value>
-  </data>
-  <data name="&gt;&gt;lblAutorun.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 47</value>
-  </data>
-  <data name="&gt;&gt;cmdAutorunToggle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cmdRegeditToggle.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="cmdApplyHotfix.Text" xml:space="preserve">
-    <value>Install</value>
-  </data>
-  <data name="label6.ImageIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblAutorun.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;cmdRegeditToggle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAutorun.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>     Windows Update</value>
-  </data>
-  <data name="lblRegedit.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 14.25pt</value>
-  </data>
-  <data name="&gt;&gt;lblRegedit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cmdApplyHotfix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 15</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Registry editor is an application to manipulate registry entries in order to change system behavior.</value>
-  </data>
-  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 14.25pt</value>
-  </data>
-  <data name="&gt;&gt;cmdApplyHotfix.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 30</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 29</value>
-  </data>
-  <data name="lblRegedit.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;cmdRegeditToggle.Name" xml:space="preserve">
-    <value>cmdRegeditToggle</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>     Autorun and Autoplay</value>
-  </data>
-  <data name="imgTexts.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABw
-        FwAAAk1TRnQBSQFMAgEBAwEAAUwBAAFQAQABGAEAARgBAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFg
-        AwABGAMAAQEBAAEgBgABJP8A/wD/ADEAAwMBBAMwAUwCRgFFAX8BWAFXAVUBswGMAXEBTwHmAYwBcQFP
-        AeYBWAFXAVUBswJHAUYBgAMwAUwDAwEE/wBVAAMdASkBZAFeAVcBywHzAZYBGwH/AfMBlgEbAf8B8wGW
-        ARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8BZAFeAVcBywMdASkkAAJH
-        AUYBgAJHAUYBgAJHAUYBgAJHAUYBgAJaAVUBwAJHAUYBgAJHAUYBgAJHAUYBgAJaAVUBwAJHAUYBgAJH
-        AUYBgAJHAUYBgAJHAUYBgPMAAQEDQQFyAcUBiAE1AfcB8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGW
-        ARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHFAYgBNQH3
-        A0EBcgMAAQEcAAGPAYMBAAH/AbEBnwEAAf8BsQGfAQAB/wGxAZ8BAAH/AY8BgwEAAf8BsQGfAQAB/wGx
-        AZ8BAAH/AbEBnwEAAf8BjwGDAQAB/wGxAZ8BAAH/AbEBnwEAAf8BsQGfAQAB/wGPAYMBAAH/TAADIwE0
-        AVABUgFTAaMBPgGHAZ8B7AE+AYEBmQHqAVYBXQFeAb8BQQJCAXMDDwEUiAADQQFyAfMBlgEbAf8B8wGW
-        ARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/
-        AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wNBAXIcAAGPAYMBAAH/AdQBvAEA
-        Af8B1AG8AQAB/wHUAbwBAAH/AY8BgwEAAf8B1AG8AQAB/wHUAbwBAAH/AdQBvAEAAf8BjwGDAQAB/wHU
-        AbwBAAH/AdQBvAEAAf8B1AG8AQAB/wGPAYMBAAH/RAADEwEaAy0BRQEBAcEC/wEBAcEC/wEBAcEC/wEB
-        AcEC/wEBAcEC/wEBAcEC/wFEAkUBfIQAAx0BKQHFAYgBNQH3AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/
-        AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGW
-        ARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHFAYgBNQH3Ax0BKRgAAY8BgwEAAf8B1AG8AQAB/wHU
-        AbwBAAH/AdQBvAEAAf8BjwGDAQAB/wHUAbwBAAH/AdQBvAEAAf8B1AG8AQAB/wGPAYMBAAH/AdQBvAEA
-        Af8B1AG8AQAB/wHUAbwBAAH/AY8BgwEAAf8sAANQAZ0DPwFtAyIBMgMdASoCNgE1AVgBYQFeAVMBxwGC
-        AXEBSQHhAwoBDQEZAakB2gH6AQEBwQL/AQEBwQL/AQEBwQL/AQEBwQL/AQEBwQL/AVYBXwFjAcWAAAMD
-        AQQBZAFeAVcBywHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfUBqgFFAf8B9AGdASkB/wHz
-        AZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEb
-        Af8B8wGWARsB/wHzAZYBGwH/AWQBXgFXAcsDAwEEFAABjwGDAQAB/wGgAZEBAAH/AaABkQEAAf8BoAGR
-        AQAB/wGPAYMBAAH/AaABkQEAAf8BoAGRAQAB/wGgAZEBAAH/AY8BgwEAAf8BsQGfAQAB/wGxAZ8BAAH/
-        AbEBnwEAAf8BjwGDAQAB/ywAA1ABmgH0AakBAAH/AfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/AfQBqQEA
-        Af8B9AGpAQAB/wMfASwBVgFcAV0BvQEBAcEC/wEBAcEC/wEBAcEC/wEBAcEC/wEBAcEC/wENAbQB4gH8
-        Aw0BEXwAAzABTAHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B+QHLAZAB/wH+
-        AfkB8gH/AfkBywGQAf8B9AGdASkB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEb
-        Af8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wMwAUwUAAGPAYMBAAH/AaABkQEAAf8BoAGR
-        AQAB/wGgAZEBAAH/AY8BgwEAAf8BoAGRAQAB/wGgAZEBAAH/AaABkQEAAf8BjwGDAQAB/wJHAUYBgAJH
-        AUYBgAJHAUYBgAJHAUYBgCwAAzIBUAH0AakBAAH/AfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/AfQBqQEA
-        Af8B9AGpAQAB/wNCAXYBQQJCAXMBAQHBAv8BAQHBAv8BAQHBAv8BAQHBAv8BAQHBAv8BAQHBAv8DNQFX
-        fAACRgFFAX8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfkBywGQCf8B/gH5
-        AfIB/wH5AcsBkAH/AfQBnQEpAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/
-        AfMBlgEbAf8B8wGWARsB/wJGAUUBfxQAAY8BgwEAAf8B1AG8AQAB/wHUAbwBAAH/AdQBvAEAAf8BjwGD
-        AQAB/wHUAbwBAAH/AdQBvAEAAf8B1AG8AQAB/wGPAYMBAAH/EAADIwE0AzwBZgMUARsgAAMKAQ0B0QGc
-        ARUB+gH0AakBAAH/AfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/AfQBqQEAAf8BXwFcAVUBwAMdASoBAQHB
-        Av8BAQHBAv8BAQHBAv8BAQHBAv8BAQHBAv8BAQHBAv8DUQGgfAABWAFXAVUBswHzAZYBGwH/AfMBlgEb
-        Af8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B+QHLAZAR/wH+AfkB8gH/AfkBywGQAf8B9AGdASkB/wHz
-        AZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8BWAFXAVUBsxQAAY8BgwEAAf8B1AG8
-        AQAB/wHUAbwBAAH/AdQBvAEAAf8BjwGDAQAB/wHUAbwBAAH/AdQBvAEAAf8B1AG8AQAB/wGPAYMBAAH/
-        EAACUQFPAZwBjgF+ARoB+AGBAXsBGgH4AWYBZAFQAdsDRAF5HAABXQFbAVYBvQH0AakBAAH/AfQBqQEA
-        Af8B9AGpAQAB/wH0AakBAAH/AfQBqQEAAf8B1QGYAQ8B+wMLAQ8BUgFxAXgB2gJRAVIBogMjATMDBgEI
-        AwkBDAMpAT4DPAFmfAABjAFxAU8B5gHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEb
-        Af8B+QHLAZAZ/wH+AfkB8gH/AfkBywGQAf8B9AGdASkB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wGM
-        AXEBTwHmFAABjwGDAQAB/wGgAZEBAAH/AaABkQEAAf8BoAGRAQAB/wGPAYMBAAH/AbEBnwEAAf8BsQGf
-        AQAB/wGxAZ8BAAH/AY8BgwEAAf8QAAF3AXABOQHsAckBswEAAf8B0wG7AQAB/wGwAZ4BAAH/AVkBWAFV
-        AbocAAJCAUEBcwH0AakBAAH/AfQBqQEAAf8B9AGpAQAB/wH0AakBAAH/AfQBqQEAAf8B6QGeAQMB/gMr
-        AUIDBgEIAycBOgFSAlQBpgFMAZEBbgHzAUsBjwFuAfIBWAFeAVsBxwNBAXIDDQESeAABjAFxAU8B5gHz
-        AZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B+QHLAZAZ/wH+AfkB8gH/AfkBywGQ
-        Af8B9AGdASkB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wGMAXEBTwHmFAABjwGDAQAB/wGgAZEBAAH/
-        AaABkQEAAf8BoAGRAQAB/wGPAYMBAAH/AkcBRgGAAkcBRgGAAkcBRgGAAkcBRgGADAADIAEuAYEBeAEg
-        AfUB1AG8AQAB/wHUAbwBAAH/AYcBgAEpAfMCOgE5AWAcAAMHAQoDNQFWAlMBTwGlAWwBZAFSAdIBcAFl
-        AVQB1ANKAY0DGQEjAwQBBgMtAUYBPAGzAXYB/wE8AbMBdgH/ATwBswF2Af8BPAGzAXYB/wE8AbMBdgH/
-        ATwBswF2Af8DRAF6eAABWAFXAVUBswHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEb
-        Af8B+QHLAZAR/wH+AfkB8gH/AfkBywGQAf8B9AGdASkB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHz
-        AZYBGwH/AfMBlgEbAf8BWAFXAVUBsxQAAY8BgwEAAf8B1AG8AQAB/wHUAbwBAAH/AdQBvAEAAf8BjwGD
-        AQAB/xwAAy0BRQFxAW0BQQHnAX8BdwEmAfQBlQGNARgB+QGHAX8BHQH3AxABFiAAAkwBTQGTAT4CPwFs
-        AyABLwMFAQcDIgExAUYCRwGBAVgBXAFwAdQDCQEMAUMBngFrAfkBPAGzAXYB/wE8AbMBdgH/ATwBswF2
-        Af8BPAGzAXYB/wE8AbMBdgH/AVkBXgFbAcR4AAJGAUUBfwHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHz
-        AZYBGwH/AfMBlgEbAf8B+QHLAZAJ/wH+AfkB8gH/AfkBywGQAf8B9AGdASkB/wHzAZYBGwH/AfMBlgEb
-        Af8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AkYBRQF/FAABjwGDAQAB/wHU
-        AbwBAAH/AdQBvAEAAf8B1AG8AQAB/wGPAYMBAAH/DAADEgEYAx0BKhAAAxwBKANDAXgDUAGdJAACUQFS
-        AaIBHAFRAv8BHAFRAv8BIgFXAfQB/gEcAVEC/wEcAVEC/wEcAVEC/wMdASoBVwFbAVoBvQE8AbMBdgH/
-        ATwBswF2Af8BPAGzAXYB/wE8AbMBdgH/ATwBswF2Af8BOwGmAXYB/AMNARF0AAMwAUwB8wGWARsB/wHz
-        AZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfkBywGQAf8B/gH5AfIB/wH5AcsBkAH/AfQBnQEp
-        Af8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHz
-        AZYBGwH/AfMBlgEbAf8DMAFMFAABjwGDAQAB/wGxAZ8BAAH/AbEBnwEAAf8BsQGfAQAB/wGPAYMBAAH/
-        CAADKwFCAXUBcAExAe8BcAFrAUUB5gMKAQ48AAE1AjYBWAEcAVEC/wEcAVEC/wEcAVEC/wEcAVEC/wEc
-        AVEC/wEcAVEC/wFBAkIBcwNCAXQBPAGzAXYB/wE8AbMBdgH/ATwBswF2Af8BPAGzAXYB/wE8AbMBdgH/
-        ATwBswF2Af8DNQFXdAADAwEEAWQBXgFXAcsB8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wH1
-        AaoBRQH/AfQBnQEpAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEb
-        Af8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wFkAV4BVwHLAwMBBBQAAkcBRgGAAkcBRgGA
-        AkcBRgGAAkcBRgGAAkcBRgGAAwEBAgJIAUcBgwGBAXgBIAH1AcMBrgEAAf8BlgGJAR0B9wFZAVgBVQG3
-        CAADKgFAAkcBRgGAAkcBRgGAAkcBRgGAAkcBRgGAIAADDQESASgBTQHiAfwBHAFRAv8BHAFRAv8BHAFR
-        Av8BHAFRAv8BHAFRAv8CVwFdAb0DHgErATwBswF2Af8BPAGzAXYB/wE8AbMBdgH/ATwBswF2Af8BPAGz
-        AXYB/wE8AbMBdgH/AVECUgGheAADHQEpAcUBiAE1AfcB8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGW
-        ARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/
-        AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AcUBiAE1AfcDHQEpLAADDQESAXcBcQE+AesBugGnAQAB/wHU
-        AbwBAAH/AdIBuwEAAf8BhQF8ARoB+AJAAT8BbgQAAkcBRgGAAaABkQEAAf8BsQGfAQAB/wGxAZ8BAAH/
-        AY8BgwEAAf8kAAFWAVgBYwHGARwBUQL/ARwBUQL/ARwBUQL/ARwBUQL/ARwBUQL/ASkBUAHaAfoDCgEN
-        AVYBbQFkAd4BUwJUAawDKAE9Aw0BEgMTARoDNQFVA0oBi3wAA0EBcgHzAZYBGwH/AfMBlgEbAf8B8wGW
-        ARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/
-        AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8DQQFyNAADJwE6AYEBdwEgAfUByAGyAQAB/wGN
-        AYABHAH2AWYBZAFQAdsDGgElBAACRwFGAYABsQGfAQAB/wHUAbwBAAH/AdQBvAEAAf8BjwGDAQAB/yQA
-        AUQCRQF8ARwBUQL/ARwBUQL/ARwBUQL/ARwBUQL/ARwBUQL/ARwBUQL/Ay0BRQMIAQuXAAEBA0EBcgHF
-        AYgBNQH3AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEb
-        Af8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8BxQGIATUB9wNBAXIDAAEBOAADQgF2AYUBfwEAAf4DUQGi
-        AwYBCAgAAkcBRgGAAbEBnwEAAf8B1AG8AQAB/wHUAbwBAAH/AY8BgwEAAf8kAAMPARQBQQJCAXMBVwFY
-        AV4BvwFHAVwBmQHqAUYBWQGfAewBUAFSAVMBowMjATSkAAMdASkBZAFeAVcBywHzAZYBGwH/AfMBlgEb
-        Af8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8B8wGWARsB/wHzAZYBGwH/AfMBlgEbAf8BZAFeAVcBywMd
-        ASlEAAMqAUEQAAJHAUYBgAGPAYMBAAH/AY8BgwEAAf8BjwGDAQAB/wGPAYMBAAH/6AADAwEEAzABTAJG
-        AUUBfwFYAVcBVQGzAYwBcQFPAeYBjAFxAU8B5gFYAVcBVQGzAkcBRgGAAzABTAMDAQT/AP8A/wD/AEAA
-        AUIBTQE+BwABPgMAASgDAAFgAwABGAMAAQEBAAEBBQABIAEBFgAD/wEACf8DAAn/AwAB/gEAAX8G/wMA
-        AfwBAAE/AeABAAT/AwAB8AEAAQ8B4AEAAv8B4AE/AwAB8AEAAQ8B4AEAAv8BgAE/AwAB4AEAAQcB4AEA
-        Af8B4AEAAT8DAAHAAQABAwHgAQAB/wHgAQABHwMAAcABAAEDAeABAAH/AeABAAEfAwABwAEAAQMB4AEP
-        AR8B4AEAAR8DAAHAAQABAwHgAQ8BBwHwAQABHwMAAcABAAEDAeABDwEHAfABAAEPAwABwAEAAQMB4AEO
-        AQcB8AEAAQ8DAAHAAQABAwHgAf4BBwH4AQABDwMAAcABAAEDAeAB5wGPAfgBAAEHAwABwAEAAQMB4AHD
-        Af8B+AEAAQcDAAHAAQABAwHgAQMBBwH4AQABBwMAAeABAAEHAf8BAQEHAfwBAAEHAwAB8AEAAQ8B/wGB
-        AQcB/AEBAf8DAAHwAQABDwH/AcMBBwH8AQcB/wMAAfwBAAE/Af8B7wEHA/8DAAH+AQABfwb/AwAJ/wMA
-        Cf8ZAAs=
-</value>
-  </data>
-  <data name="label3.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="lbINI.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
   </data>
   <data name="label6.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 118</value>
-  </data>
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;lblAutorun.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;cmdIniToggle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label6.ImageIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cmdApplyHotfix.Text" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="&gt;&gt;cmdApplyHotfix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="cmdAutorunToggle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 29</value>
+  </data>
+  <data name="lblAutorun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>423, 304</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="lblRegedit.Text" xml:space="preserve">
+    <value>...</value>
   </data>
   <data name="&gt;&gt;cmdAutorunToggle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label3.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="cmdAutorunToggle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 15</value>
-  </data>
-  <data name="cmdApplyHotfix.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="cmdAutorunToggle.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="lblAutorun.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 186</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="lblAutorun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 29</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Autorun is a Windows feature that lets "autorun.inf" commands executed when plugged into computer.</value>
-  </data>
-  <data name="cmdApplyHotfix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 167</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 14.25pt</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>KProtect</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cmdIniToggle.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 157</value>
-  </data>
-  <data name="cmdRegeditToggle.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;cmdApplyHotfix.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;lblRegedit.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lblRegedit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Underline</value>
-  </data>
-  <data name="cmdAutorunToggle.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;imgTexts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label13.ImageIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 29</value>
-  </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblAutorun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 15</value>
-  </data>
-  <data name="&gt;&gt;lblAutorun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>423, 252</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblRegedit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 99</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label13.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;cmdAutorunToggle.Name" xml:space="preserve">
-    <value>cmdAutorunToggle</value>
-  </data>
-  <data name="cmdAutorunToggle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 29</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblAutorun.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Underline</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>     INI File Mapping</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
