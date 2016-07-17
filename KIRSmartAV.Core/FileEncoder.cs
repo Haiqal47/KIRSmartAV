@@ -33,17 +33,29 @@ namespace KIRSmartAV.Core
         private BackgroundWorker _bwDecrypt = null;
 
         public event EventHandler<EncodeProgressChanged> ProgressChanged;
+        public event EventHandler ProgressCompleted;
 
         public FileEncoder()
         {
             _bwEncrypt = new BackgroundWorker();
+            _bwEncrypt.WorkerSupportsCancellation = true;
             _bwEncrypt.DoWork += BWEncrypt_DoWork;
+            _bwEncrypt.RunWorkerCompleted += BW_RunWorkerCompleted;
 
             _bwDecrypt = new BackgroundWorker();
+            _bwDecrypt.WorkerSupportsCancellation = true;
             _bwDecrypt.DoWork += BWDecrypt_DoWork;
+            _bwDecrypt.RunWorkerCompleted += BW_RunWorkerCompleted;
         }
 
         #region Async Event Handlers
+        private void BW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            var handler = ProgressCompleted;
+            if (handler != null)
+                handler(this, EventArgs.Empty);
+        }
+
         private void BWEncrypt_DoWork(object sender, DoWorkEventArgs e)
         {
             FileStream fsOutput = null;
@@ -67,6 +79,12 @@ namespace KIRSmartAV.Core
                 // write encoded data
                 while ((bytesRead = fsInput.Read(buffer, 0, buffer.Length)) > 0)
                 {
+                    if (_bwEncrypt.CancellationPending)
+                    {
+                        RaiseEventChanged(100);
+                        return;
+                    }
+
                     totalWritten += bytesRead;
                     var progress = (double)totalWritten * 100 / totalLength;
                     RaiseEventChanged(Convert.ToInt32(progress));
@@ -114,6 +132,12 @@ namespace KIRSmartAV.Core
                 // write decoded data
                 while ((bytesRead = encodedStream.Read(buffer, 0, buffer.Length)) > 0)
                 {
+                    if (_bwEncrypt.CancellationPending)
+                    {
+                        RaiseEventChanged(100);
+                        return;
+                    }
+
                     totalWritten += bytesRead;
                     var progress = (double)totalWritten * 100 / totalLength;
                     RaiseEventChanged(Convert.ToInt32(progress));

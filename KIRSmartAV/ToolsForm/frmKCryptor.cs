@@ -43,6 +43,15 @@ namespace KIRSmartAV.ToolsForms
 
             _encoder = new FileEncoder();
             _encoder.ProgressChanged += FileEncoder_ProgressChanged;
+            _encoder.ProgressCompleted += FileEncoder_ProgressCompleted;
+        }
+
+        private void FileEncoder_ProgressCompleted(object sender, EventArgs e)
+        {
+            MessageBox.Show(strings.EncodeDecodeCompletedText, strings.EncodeDecodeCompletedTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            cmdExecute.Text = strings.StartText;
+            cmdExecute.Tag = "START";
+            cmdExecute.Enabled = true;
         }
 
         private void FileEncoder_ProgressChanged(object sender, FileEncoder.EncodeProgressChanged e)
@@ -52,14 +61,6 @@ namespace KIRSmartAV.ToolsForms
                 this.BeginInvoke(new Action<int>(((x) =>
                 {
                     prgStatus.Value = x;
-
-                    if (x == 100)
-                    {
-                        MessageBox.Show(strings.EncodeDecodeCompletedText, strings.EncodeDecodeCompletedTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cmdExecute.Text = strings.StartText;
-                        cmdExecute.Tag = "START";
-                        cmdExecute.Enabled = true;
-                    }
                 })), e.ProgressPercentage);
             }
         }
