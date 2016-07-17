@@ -58,10 +58,7 @@ namespace KIRSmartAV.ToolsForms
         {
             if (InvokeRequired)
             {
-                this.BeginInvoke(new Action<int>(((x) =>
-                {
-                    prgStatus.Value = x;
-                })), e.ProgressPercentage);
+                this.BeginInvoke(new Action<int>(((x) => prgStatus.Value = x)), e.ProgressPercentage);
             }
         }
 
