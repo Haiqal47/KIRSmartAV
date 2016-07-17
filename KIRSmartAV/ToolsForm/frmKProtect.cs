@@ -67,14 +67,14 @@ namespace KIRSmartAV.ToolsForms
             //Check autorun
             if (_module.IsAutorunEnabled())
             {
-                lblAutorun.Text = strings.ActiveText;
-                cmdAutorunToggle.Text = strings.DeactivateText;
+                lblAutorun.Text = strings.DeactiveText;
+                cmdAutorunToggle.Text = strings.ActivateText;
                 _logger.Info("KProtect status: Autorun-Enabled.");
             }
             else
             {
-                lblAutorun.Text = strings.DeactiveText;
-                cmdAutorunToggle.Text = strings.ActivateText;
+                lblAutorun.Text = strings.ActiveText;
+                cmdAutorunToggle.Text = strings.DeactivateText;
                 _logger.Info("KProtect status: Autorun-Disabled.");
             }
 
@@ -95,14 +95,14 @@ namespace KIRSmartAV.ToolsForms
             //Check regedit
             if (_module.IsRegeditEnabled())
             {
-                lblRegedit.Text = strings.ActiveText;
-                cmdRegeditToggle.Text = strings.DeactivateText;
+                lblRegedit.Text = strings.DeactiveText;
+                cmdRegeditToggle.Text = strings.ActivateText;
                 _logger.Info("KProtect status: Regedit-Enabled.");
             }
             else
             {
-                lblRegedit.Text = strings.DeactiveText;
-                cmdRegeditToggle.Text = strings.ActivateText;
+                lblRegedit.Text = strings.ActiveText;
+                cmdRegeditToggle.Text = strings.DeactivateText;
                 _logger.Info("KProtect status: Regedit-Enabled.");
             }
 
