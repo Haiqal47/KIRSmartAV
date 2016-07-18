@@ -18,7 +18,9 @@
 */
 
 using KIRSmartAV.Core;
+using KIRSmartAV.Properties;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -26,15 +28,23 @@ using System.Security.Permissions;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace KIRSmartAV.ApplicationServices
+namespace KIRSmartAV.ApplicationServices.MsgFilters
 {    
     [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
-    public class QuickFixMsgFilter
+    public class QuickFixMsgFilter : IMessageFilter, IDisposable
     {
-        private static Properties.Settings _settings = Properties.Settings.Default;
+        private static Settings _settings = Settings.Default;
         private static LogManager _logger = LogManager.GetClassLogger();
 
-        public void FilterMessage(Message m)
+        private BackgroundWorker _worker = null;
+        public QuickFixMsgFilter()
+        {
+            _worker = new BackgroundWorker();
+            _worker.WorkerSupportsCancellation = true;
+            _worker.DoWork += Worker_DoWork;
+        }
+
+        public bool PreFilterMessage(ref Message m)
         {
             // check the message and parameter
             if (m.Msg == NativeMethods.WM_DEVICECHANGE && m.WParam.ToInt32() == NativeMethods.DBT_DEVICEARRIVAL)
@@ -55,49 +65,56 @@ namespace KIRSmartAV.ApplicationServices
                         _settings.Reload();
                     }
 
+                    // do quickfix?
                     if (_settings.QuickFixEnabled)
                     {
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(QuickFixCallback), logicalPath);
+                        if (!_worker.IsBusy)
+                        {
+                            _worker.RunWorkerAsync(logicalPath);
+                        }
                     }
                 }
             }
+
+            // return as unhandled
+            return false;
         }
 
-        private void QuickFixCallback(object args)
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            // prepare variables
+            var driveRoot = e.Argument.ToString();
+            var driveHidden = driveRoot + "\\" + FastIO.BlankSpaceCharacter;
+            var driveRecovered = driveRoot + "\\" + AioHelpers.KCrecoveredName;
+
             // check if it's is FAT32
-            var driveVol = new DriveData(args.ToString());
-            if ((driveVol.DriveFormat != AioHelpers.Fat32Format))
+            var driveVol = new DriveData(driveRoot);
+            if (!driveVol.DriveFormat.StartsWith(AioHelpers.FatFormat))
             {
                 // this drive doesn't meet requirements.
                 return;
             }
 
-            _logger.Info("QuickFix taking action. Drive \"" + args.ToString() + "\"");
-
             // begin counting time
+            _logger.Info("QuickFix taking action. Drive \"" + driveRoot + "\"");
             var counter = new Stopwatch();
             counter.Start();
 
-            // prepare variables
-            var driveRoot = args.ToString();
-            var driveHidden = driveRoot + "\\" + FastIO.BlankSpaceCharacter;
-            var driveRecovered = driveRoot + "\\" + AioHelpers.KCrecoveredName;
-
-            // restore root directory attribute
-            _logger.Info("QuickFix: Restoring attribute and no-name directory.");
             try
             {
+                // restore root directory attribute
+                _logger.Debug("QuickFix: Restoring no-name directory attribute.");
                 FastIO.SetFileAttribute(driveHidden, FileAttributes.Normal, false);
             }
             catch (Exception ex)
             {
                 _logger.Error("QuickFix: Can't change no-name attribute directory.", ex);
             }
-
-            // restore root directory name
+   
             try
             {
+                // restore root directory name
+                _logger.Debug("QuickFix: Renaming no-name directory.");
                 FastIO.MoveFile(driveHidden, driveRecovered, false);
             }
             catch (Exception ex)
@@ -111,7 +128,7 @@ namespace KIRSmartAV.ApplicationServices
             {
                 if (counter.ElapsedMilliseconds > 2000)
                 {
-                    // only run in 10 seconds
+                    // only run for 10 seconds
                     _logger.Debug("QuickFix: Operation timeout.");
                     break;
                 }
@@ -136,7 +153,35 @@ namespace KIRSmartAV.ApplicationServices
             // stop counting and log away
             counter.Stop();
             _logger.Info("QuickFix operation finished. Drive \"" + driveRoot + "\" time elapsed: " + counter.ElapsedMilliseconds);
-            NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_QUICKFIXNOTIFY, IntPtr.Zero, IntPtr.Zero);
+            NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.KCAV_QUICKFIXNOTIFY, IntPtr.Zero, IntPtr.Zero);
         }
+
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
+
+        // This code added to correctly implement the disposable pattern.
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue && disposing)
+            {
+                if (_worker != null)
+                {
+                    if (!_worker.IsBusy)
+                    {
+                        _worker.CancelAsync();
+                    }
+
+                    Thread.Sleep(300);
+                    _worker.Dispose();
+                }
+            }
+            disposedValue = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+        #endregion
     }
 }

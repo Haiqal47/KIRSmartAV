@@ -1,5 +1,5 @@
 ﻿/*   
-      BroadcastMsgFilter.cs (KIRSmartAV)
+      ShowWindowMsg.cs (KIRSmartAV)
       ============================================
       Copyright(C) 2016  Fahmi Noor Fiqri
   
@@ -17,38 +17,25 @@
       along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-using KIRSmartAV.Localization;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace KIRSmartAV.ApplicationServices
+namespace KIRSmartAV.ApplicationServices.MsgFilters
 {
-    class BroadcastMsgFilter : IMessageFilter
+    class ShowWindowMsgFilter : IMessageFilter
     {
-        private static LogManager _logger = LogManager.GetClassLogger();
-
         public bool PreFilterMessage(ref Message m)
         {
-            // show main form
-            if (m.Msg == NativeMethods.WM_SHOWME)
+            if (m.Msg == NativeMethods.KCAV_SHOWME)
             {
-                _logger.Debug("Got WM_SHOWME broadcast message, showing \"MainForm\"");
-                KcavContext.CurrentContext.ShowMainForm();
-                KcavContext.CurrentContext.BringMainForm();
+                KcavContext.Instance.ShowMainForm();
+                KcavContext.Instance.BringMainForm();
                 return true;
             }
 
-            // show baloon tip
-            if (m.Msg == NativeMethods.WM_QUICKFIXNOTIFY)
-            {
-                _logger.Debug("QuickFix has finished it's job.");
-                KcavContext.CurrentContext.ShowBaloonTip("QuickFix Auto-Action", strings.QuickFixFinished, ToolTipIcon.Info);
-                return true;
-            }
-
-            // return the rest as unhandled
+            // return as unhandled
             return false;
         }
     }
