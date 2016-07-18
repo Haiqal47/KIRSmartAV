@@ -2,7 +2,7 @@
 <!--
       Product.wxs (KIRSmartAV-setup)
       ============================================
-      Copyright(C) %CurrentYear%  Fahmi Noor Fiqri
+      Copyright(C) 2016  Fahmi Noor Fiqri
   
       This program is free software: you can redistribute it and/or modify
       it under the terms of the GNU Lesser General Public License as published by
@@ -75,6 +75,9 @@
       <ComponentRef Id="KIRSmartAV.exe.config" />
       <ComponentRef Id="KIRSmartAV.resources.dll" />
       <ComponentRef Id="KIRSmartAV.Core.dll" />
+      
+      <!-- startup registry -->
+      <ComponentRef Id="StartupEntry" />
 
       <!-- libclamav -->
       <ComponentRef Id="MClamSlim.dll" />

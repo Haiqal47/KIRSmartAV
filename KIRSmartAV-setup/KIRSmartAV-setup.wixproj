@@ -25,6 +25,7 @@
     <Compile Include="Files.wxs" />
     <Compile Include="Folders.wxs" />
     <Compile Include="Product.wxs" />
+    <Compile Include="Registry.wxs" />
     <Compile Include="Shortcuts.wxs" />
   </ItemGroup>
   <ItemGroup>

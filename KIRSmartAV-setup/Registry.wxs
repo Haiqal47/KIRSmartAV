@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-      Folders.wxs (KIRSmartAV-setup)
+      Registry.wxs (KIRSmartAV-setup)
       ============================================
       Copyright(C) 2016  Fahmi Noor Fiqri
   
@@ -18,26 +18,16 @@
       along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <!-- Define folders -->
-  <Fragment>
-    <Directory Id="TARGETDIR" Name="SourceDir">
-      <!-- Application folder on Program Files -->
-      <Directory Id="ProgramFilesFolder">
-        <Directory Id="APPLICATIONROOTDIRECTORY" Name="KIRSmartAV">
-          <Directory Id="LOCALEDIRECTORY" Name="id-ID" />
-          <Directory Id="DATABASEDIRECTORY" Name="database" />
-          <Directory Id="HOTFIXDIRECTORY" Name="updates" />
-          <Directory Id="LICENSEDIRECTORY" Name="COPYING" />
-        </Directory>
-      </Directory>
-      
-      <!-- Application shortcut folder on Start Menu -->
-      <Directory Id="ProgramMenuFolder">
-        <Directory Id="ApplicationProgramsFolder" Name="KIRSmartAV" />
-      </Directory>
-
-      <!-- Desktop shortcut -->
-      <Directory Id="DesktopFolder" Name="Desktop" />
-    </Directory>
-  </Fragment>
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+      <!-- Define registry key -->
+      <Component Id="StartupEntry" Guid="2E9EBA03-382A-437A-A59B-3D9739A6F945">
+        <!-- Use HKCU root and Run subkey -->
+        <RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\Run" ForceDeleteOnUninstall="yes" >
+          <!-- Path to kirsmartav -->
+          <RegistryValue Type="string" Name="KIRSmartAV" Value="[#KIRSmartAV.exe] /startup" KeyPath="yes" />
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+	</Fragment>
 </Wix>

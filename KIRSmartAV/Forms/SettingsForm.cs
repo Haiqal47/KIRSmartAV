@@ -53,7 +53,8 @@ namespace KIRSmartAV.Forms
             // Startup
             using (var regKey = Registry.CurrentUser.OpenSubKey(AioHelpers.StartupRegistryPath, true))
             {
-                chkRunOnStartup.Checked = ((regKey.GetValue("KIRSmartAV") != null));
+                var regValue = regKey.GetValue("KIRSmartAV");
+                chkRunOnStartup.Checked = ((regValue != null) && (regValue.ToString() != ""));
                 _startupLastCheck = chkRunOnStartup.Checked;
             }
 
@@ -94,7 +95,7 @@ namespace KIRSmartAV.Forms
                         }
                         else
                         {
-                            regKey.DeleteValue("KIRSmartAV");
+                            regKey.SetValue("KIRSmartAV", "");
                         }
                     }
                     _logger.Debug("Startup value changed.");
