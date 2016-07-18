@@ -34,9 +34,9 @@ namespace KIRSmartAV.Forms
     {
         private static LogManager _logger = LogManager.GetClassLogger();
         private static Settings _appSettings = Settings.Default;
-        private QuickFixMsgFilter _quickFixFilter = new QuickFixMsgFilter();
-        private bool _antivirusCapability = true;
+
         private FormsGC _formsHandler = FormsGC.Default;
+        private bool _antivirusCapability = true;
 
         public MainForm()
         {
@@ -65,7 +65,7 @@ namespace KIRSmartAV.Forms
             catch (Exception ex)
             {
                 _logger.Error("Can't access libclamav.", ex);
-                KcavContext.CurrentContext.ShowBaloonTip(strings.KIRSmartAVTitle, strings.LibclamavError, ToolTipIcon.Warning);
+                KcavContext.Instance.ShowBaloonTip(strings.KIRSmartAVTitle, strings.LibclamavError, ToolTipIcon.Warning);
                 _antivirusCapability = false;
             }
         }
@@ -216,16 +216,6 @@ namespace KIRSmartAV.Forms
             {
                 _logger.Debug("Form close triggered, closing form.");
             }
-        }
-
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
-        protected override void WndProc(ref Message m)
-        {
-            // check quickfix
-            _quickFixFilter.FilterMessage(m);
-           
-            // handle other messages
-            base.WndProc(ref m);
         }
         #endregion
     }

@@ -31,8 +31,8 @@ namespace KIRSmartAV.ApplicationServices
         public const int WM_DEVICECHANGE = 0x219;
         public const int HWND_BROADCAST = 0xffff;
 
-        public static readonly int WM_SHOWME = RegisterWindowMessage("WM_SHOWME");
-        public static readonly int WM_QUICKFIXNOTIFY = RegisterWindowMessage("WM_QUICKFIXNOTIFY");
+        public static readonly int KCAV_SHOWME = RegisterWindowMessage("WM_SHOWME");
+        public static readonly int KCAV_QUICKFIXNOTIFY = RegisterWindowMessage("WM_QUICKFIXNOTIFY");
 
         [DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
         [return: MarshalAs(UnmanagedType.Bool)]

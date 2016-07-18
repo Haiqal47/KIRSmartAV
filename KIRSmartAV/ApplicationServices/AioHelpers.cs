@@ -27,7 +27,7 @@ namespace KIRSmartAV.ApplicationServices
     static class AioHelpers
     {
         public const long MaximumCheckSize = 16000000000;
-        public const string Fat32Format = "FAT32";
+        public const string FatFormat = "FAT";
 
         public const string KCrecoveredName = "KCrecovered";
         public const string KCchestName = "KIRSmartChest";

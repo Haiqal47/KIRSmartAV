@@ -18,6 +18,7 @@
 */
 
 using KIRSmartAV.ApplicationServices;
+using KIRSmartAV.ApplicationServices.MsgFilters;
 using KIRSmartAV.Properties;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,8 @@ namespace KIRSmartAV
     {
         private static Mutex _mutex = new Mutex(true, "KIRSmartAVSingleInstance");
         private static KcavContext _appContext = null;
+        private static MessagePumpManager _msgPump = null;
+
         private static LogManager _logger = LogManager.GetClassLogger();
         private static Settings _settings = Settings.Default;
 
@@ -53,35 +56,9 @@ namespace KIRSmartAV
 
                 // check culture info
                 langEn = _settings.UILanguage == "Indonesia" ? false : true;
-
-                // command-line switches
-                foreach (string argument in args)
-                {
-                    var argNomalized = argument.ToLowerInvariant();
-                    if (argNomalized == "/startup")
-                    {
-                        // startup
-                        isStartup = true;
-                        _logger.Info("Startup mode initiated.");
-                    }
-                    else if (argNomalized == "/lang-id")
-                    {
-                        // language ID
-                        langEn = false;
-                        _logger.Info("Override culture info to Indonesia.");
-                    }
-                    else if (argNomalized == "/lang-en")
-                    {
-                        // language EN
-                        langEn = true;
-                        _logger.Info("Override culture info to English US.");
-                    }
-                    else
-                    {
-                        // invalid switch
-                        hasErrors = true;
-                    }
-                }
+                
+                // parse command line
+                hasErrors = ParseCommandLine(args, out langEn, out isStartup);
 
                 // if there is an invalid switch
                 if (!hasErrors)
@@ -96,18 +73,23 @@ namespace KIRSmartAV
                         Thread.CurrentThread.CurrentUICulture = new CultureInfo("id-ID");
                     }
 
+                    // prepare message pump
+                    _msgPump = new MessagePumpManager();
+                    _msgPump.AddMsgFilter(new ShowWindowMsgFilter());
+                    _msgPump.AddMsgFilter(new NotifyBaloonMsgFilter());
+
+                    _msgPump.StartWndProcHandler();
+                    _msgPump.AddWndProcFilter(new QuickFixMsgFilter());
+
                     // prepare application context 
                     _appContext = new KcavContext();
                     _appContext.InitTrayIcon();
 
                     // is startup?
                     if (!isStartup)
-                    {
+                    { 
                         _appContext.ShowMainForm();
                     }
-
-                    // for checking broadcast messages
-                    Application.AddMessageFilter(new BroadcastMsgFilter());
 
                     // start message loop
                     Application.Run(_appContext);
@@ -125,10 +107,48 @@ namespace KIRSmartAV
             else
             {
                 // post message to Broadcast handle
-                NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
+                NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.KCAV_SHOWME, IntPtr.Zero, IntPtr.Zero);
                 _logger.Info("Posting WM_SHOWME broadcast message to all window handle.");
             }
             _logger.Debug("Application terminated.");
+        }
+
+        private static bool ParseCommandLine(string[] cmdArgs, out bool enLang, out bool startup)
+        {
+            bool hasErrors = false;
+            enLang = false;
+            startup = false;
+
+            // command-line switches
+            foreach (string argument in cmdArgs)
+            {
+                var argNomalized = argument.ToLowerInvariant();
+                if (argNomalized == "/startup")
+                {
+                    // startup
+                    startup = true;
+                    _logger.Info("Startup mode initiated.");
+                }
+                else if (argNomalized == "/lang-id")
+                {
+                    // language ID
+                    enLang = false;
+                    _logger.Info("Override culture info to Indonesia.");
+                }
+                else if (argNomalized == "/lang-en")
+                {
+                    // language EN
+                    enLang = true;
+                    _logger.Info("Override culture info to English US.");
+                }
+                else
+                {
+                    // invalid switch
+                    hasErrors = true;
+                }
+            }
+
+            return hasErrors;
         }
     }
 }

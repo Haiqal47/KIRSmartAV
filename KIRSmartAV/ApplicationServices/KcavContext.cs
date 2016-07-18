@@ -29,11 +29,12 @@ namespace KIRSmartAV.ApplicationServices
     public class KcavContext : ApplicationContext
     {
         private NotifyIcon _trayIcon = null;
-        private Form _ownedForm = null;
+        private Form _mainForm = null;
+
         private static KcavContext _currentContext = null;
         private static LogManager _logger = LogManager.GetClassLogger();
 
-        public static KcavContext CurrentContext
+        public static KcavContext Instance
         {
             get { return _currentContext; }
         }
@@ -45,7 +46,7 @@ namespace KIRSmartAV.ApplicationServices
                 _currentContext = this;
 
             // initialize main form
-            _ownedForm = new Forms.MainForm();
+            _mainForm = new Forms.MainForm();
 
             // subscribe to ThreadExit for clean up
             this.ThreadExit += KcavContext_ThreadExit;
@@ -62,12 +63,12 @@ namespace KIRSmartAV.ApplicationServices
         public void ShowMainForm()
         {
             _logger.Debug("Showing \"MainForm.\"");
-            _ownedForm.Show();
+            _mainForm.Show();
         }
 
         public void BringMainForm()
         {
-            NativeMethods.SetForegroundWindow(_ownedForm.Handle);
+            NativeMethods.SetForegroundWindow(_mainForm.Handle);
         }
 
         #region Tray Icon
@@ -96,7 +97,7 @@ namespace KIRSmartAV.ApplicationServices
             // create notify icon
             _trayIcon = new NotifyIcon();
             _trayIcon.ContextMenuStrip = cmenu;
-            _trayIcon.Icon = _ownedForm.Icon;
+            _trayIcon.Icon = _mainForm.Icon;
             _trayIcon.Visible = true;
 
             _trayIcon.DoubleClick += TrayIcon_DoubleClick;
@@ -110,7 +111,7 @@ namespace KIRSmartAV.ApplicationServices
         private void TrayIcon_DoubleClick(object sender, EventArgs e)
         {
             _logger.Debug("Showing \"MainForm.\"");
-            _ownedForm.Show();
+            _mainForm.Show();
         }
 
         private void TaskbarStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -119,7 +120,7 @@ namespace KIRSmartAV.ApplicationServices
             {
                 case "KIRSmartAV":
                     _logger.Debug("Showing \"MainForm.\"");
-                    _ownedForm.Show();
+                    _mainForm.Show();
                     break;
 
                 case "Visit homepage":

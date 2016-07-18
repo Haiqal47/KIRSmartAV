@@ -1,5 +1,5 @@
 ﻿/*   
-      ShowWindowMsg.cs (KIRSmartAV)
+      ShowWindowMsgFilter.cs (KIRSmartAV)
       ============================================
       Copyright(C) 2016  Fahmi Noor Fiqri
   
