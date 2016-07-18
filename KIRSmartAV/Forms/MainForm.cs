@@ -150,7 +150,7 @@ namespace KIRSmartAV.Forms
             {
                 _logger.Error("Unable to get elevation status.", ex);
             }
-            isElevated = true;
+
             // pick right form
             switch (selectedTool.ImageIndex)
             {
