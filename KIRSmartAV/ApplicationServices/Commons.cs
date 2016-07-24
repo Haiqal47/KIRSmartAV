@@ -24,7 +24,7 @@ using System.Text;
 
 namespace KIRSmartAV.ApplicationServices
 {
-    static class AioHelpers
+    static class Commons
     {
         public const long MaximumCheckSize = 16000000000;
         public const string FatFormat = "FAT";
@@ -38,6 +38,9 @@ namespace KIRSmartAV.ApplicationServices
         public const string InputMultidottedMask = "*.*." + VirusExtension;
         public const string InputAnyFileMask = "*.*";
 
+        public const string ShortDateFormat = "yyyy-MM-dd";        // ISO8601
+        public const string LongDateFormat = "yyyyMMdd'T'HHmmss";  // ISO8601
+
         public const string StartupRegistryPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
 
         public static readonly string[] ReservedNames = { "system volume information", "recycler", "recycler_detec", "autorun.inf", "indexervolumeguide" };
@@ -46,7 +49,7 @@ namespace KIRSmartAV.ApplicationServices
 #if DEBUG
         public static readonly string DatabasePath = "D:\\database";
 #else
-        public static readonly string DatabasePath = Path.Combine(Core.Helpers.GetExecutingAssembly(), "database");
+        public static readonly string DatabasePath = Path.Combine(GetAppDataPath(), "database");
 #endif
         
         public static string GetChestFolder()
@@ -66,11 +69,10 @@ namespace KIRSmartAV.ApplicationServices
             return chestDir;
         }
 
-        public static string GenerateChestFilePath(string sourceFilePath)
+        public static string GenerateFilePath(string sourceFilePath, string outputPath)
         {
             var extension = Path.GetExtension(sourceFilePath);
             var fname = Path.GetFileNameWithoutExtension(sourceFilePath);
-            var outputPath = GetChestFolder();
             string outputFilePath = "";
 
             for (int i = 0; i < 100; i++)
@@ -90,6 +92,17 @@ namespace KIRSmartAV.ApplicationServices
             }
 
             return outputFilePath;
+        }
+
+        public static string GetAppDataPath()
+        {
+            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var completeDir = Path.Combine(basePath, "KcavData");
+            if (!Directory.Exists(completeDir))
+            {
+                Directory.CreateDirectory(completeDir);
+            }
+            return completeDir;
         }
     }
 }
