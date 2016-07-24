@@ -25,9 +25,15 @@
       <Directory Id="ProgramFilesFolder">
         <Directory Id="APPLICATIONROOTDIRECTORY" Name="KIRSmartAV">
           <Directory Id="LOCALEDIRECTORY" Name="id-ID" />
-          <Directory Id="DATABASEDIRECTORY" Name="database" />
           <Directory Id="HOTFIXDIRECTORY" Name="updates" />
           <Directory Id="LICENSEDIRECTORY" Name="COPYING" />
+        </Directory>
+      </Directory>
+      
+      <!-- App data -->
+      <Directory Id="CommonAppDataFolder">
+        <Directory Id="APPLICATIONDATADIRECTORY" Name="KcavData">
+          <Directory Id="DATABASEDIRECTORY" Name="database" />
         </Directory>
       </Directory>
       

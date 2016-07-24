@@ -66,13 +66,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationServices\AioHelpers.cs" />
+    <Compile Include="ApplicationServices\Commons.cs" />
     <Compile Include="ApplicationServices\FormsGC.cs" />
-    <Compile Include="ApplicationServices\MessagePumpManager.cs" />
+    <Compile Include="ApplicationServices\WMFilters\MessagePumpManager.cs" />
     <Compile Include="ApplicationServices\LogManager.cs" />
-    <Compile Include="ApplicationServices\MsgFilters\NotifyBaloonMsgFilter.cs" />
-    <Compile Include="ApplicationServices\MsgFilters\ShowWindowMsgFilter.cs" />
-    <Compile Include="ApplicationServices\WndProcWatcher.cs" />
+    <Compile Include="ApplicationServices\WMFilters\NotifyBaloonMsgFilter.cs" />
+    <Compile Include="ApplicationServices\WMFilters\ShowWindowMsgFilter.cs" />
+    <Compile Include="ApplicationServices\WMFilters\WndProcWatcher.cs" />
     <Compile Include="imageResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,7 +135,7 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationServices\MsgFilters\QuickFixMsgFilter.cs" />
+    <Compile Include="ApplicationServices\WMFilters\QuickFixMsgFilter.cs" />
     <EmbeddedResource Include="Forms\AboutForm.id-ID.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\bug_large.png" />
     <None Include="Resources\locale_alternate.png" />
     <None Include="Resources\geolocation.png" />
     <None Include="Resources\folder_tree.png" />

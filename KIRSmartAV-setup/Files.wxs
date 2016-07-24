@@ -68,15 +68,6 @@
       </Component>
     </DirectoryRef>
     
-    <!-- Define database directory -->
-    <DirectoryRef Id="DATABASEDIRECTORY">
-      <Component Id="DatabaseUpdates" Guid="78E04752-72F5-4DD4-A087-2A820B34FF26">
-        <File Id="bytecode.cvd" DiskId="1" Source="files\database\bytecode.cvd" Checksum="yes" />
-        <File Id="daily.cvd" DiskId="1" Source="files\database\daily.cvd" Checksum="yes" />
-        <File Id="main.cvd" DiskId="1" Source="files\database\main.cvd" Checksum="yes" />
-      </Component>
-    </DirectoryRef>
-
     <!-- Define windows hotfixes -->
     <DirectoryRef Id="HOTFIXDIRECTORY">
       <Component Id="WindowsHotfixes" Guid="E5C39B3F-5EB1-455F-8C3A-CC4F24A328FE">
@@ -103,6 +94,19 @@
         <File Id="COPYING.zlib" DiskId="1" Source="files\license\COPYING.zlib" />
         <File Id="EULA_id.rtf" DiskId="1" Source="files\license\endLicense-id.rtf" />
         <File Id="EULA_en.rtf" DiskId="1" Source="files\license\endLicense-en.rtf" />
+      </Component>
+    </DirectoryRef>
+    
+    <DirectoryRef Id="APPLICATIONDATADIRECTORY">
+      <!-- Define database directory -->
+      <Component Id="DatabaseUpdates" Guid="78E04752-72F5-4DD4-A087-2A820B34FF26">
+        <File Id="bytecode.cvd" DiskId="1" Source="files\database\bytecode.cvd" Checksum="yes" />
+        <File Id="daily.cvd" DiskId="1" Source="files\database\daily.cvd" Checksum="yes" />
+        <File Id="main.cvd" DiskId="1" Source="files\database\main.cvd" Checksum="yes" />
+
+        <!-- Define uninstallation actions -->
+        <RemoveFolder Id="AppDataFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\KIRSmartAV" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
       </Component>
     </DirectoryRef>
   </Fragment>
