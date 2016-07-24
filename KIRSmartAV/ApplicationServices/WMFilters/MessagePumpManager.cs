@@ -25,7 +25,7 @@ using System.Text;
 using System.Windows.Forms;
 using KIRSmartAV.Localization;
 
-namespace KIRSmartAV.ApplicationServices
+namespace KIRSmartAV.ApplicationServices.MsgFilters
 {
     [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
     class MessagePumpManager : IDisposable

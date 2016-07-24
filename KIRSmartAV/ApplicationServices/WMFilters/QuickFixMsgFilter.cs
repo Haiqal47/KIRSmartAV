@@ -85,11 +85,11 @@ namespace KIRSmartAV.ApplicationServices.MsgFilters
             // prepare variables
             var driveRoot = e.Argument.ToString();
             var driveHidden = driveRoot + "\\" + FastIO.BlankSpaceCharacter;
-            var driveRecovered = driveRoot + "\\" + AioHelpers.KCrecoveredName;
+            var driveRecovered = driveRoot + "\\" + Commons.KCrecoveredName;
 
             // check if it's is FAT32
             var driveVol = new DriveData(driveRoot);
-            if (!driveVol.DriveFormat.StartsWith(AioHelpers.FatFormat))
+            if (!driveVol.DriveFormat.StartsWith(Commons.FatFormat))
             {
                 // this drive doesn't meet requirements.
                 return;
@@ -135,7 +135,7 @@ namespace KIRSmartAV.ApplicationServices.MsgFilters
 
                 // normalize folders
                 var normalizedFilePath = Path.GetFileName(folderPath).ToLowerInvariant();
-                foreach (string reservedName in AioHelpers.ReservedNames)
+                foreach (string reservedName in Commons.ReservedNames)
                 {
                     if (normalizedFilePath == reservedName)
                     {

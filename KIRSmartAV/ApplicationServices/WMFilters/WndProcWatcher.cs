@@ -23,7 +23,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Forms;
 
-namespace KIRSmartAV.ApplicationServices
+namespace KIRSmartAV.ApplicationServices.MsgFilters
 {
     [DesignerCategory("Code")]
     public class WndProcWatcher : Form
