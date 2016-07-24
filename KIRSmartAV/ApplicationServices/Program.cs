@@ -30,6 +30,13 @@ namespace KIRSmartAV
 {
     static class Program
     {
+        private struct AppStartupInfo
+        {
+            public bool IsEnglishCulture { get; set; }
+            public bool IsStartup { get; set; }
+            public bool HasErrors { get; set; }
+        }
+
         private static Mutex _mutex = new Mutex(true, "KIRSmartAVSingleInstance");
         private static KcavContext _appContext = null;
         private static MessagePumpManager _msgPump = null;
@@ -44,49 +51,38 @@ namespace KIRSmartAV
         static void Main(string[] args)
         {
             _logger.Debug("Application started.");
-            if (_mutex.WaitOne(TimeSpan.Zero, true))
+            if (_mutex.WaitOne(TimeSpan.FromMilliseconds(500), true))
             {
                 // enable visual styles
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                bool isStartup = false;
-                bool hasErrors = false;
-                bool langEn = true;
-
-                // check culture info
-                langEn = _settings.UILanguage == "Indonesia" ? false : true;
+                // configure logger class
+                LogManager.ConfigureLogger();
                 
                 // parse command line
-                hasErrors = ParseCommandLine(args, out langEn, out isStartup);
+                AppStartupInfo startupInfo = ParseCommandLine(args);
 
                 // if there is an invalid switch
-                if (!hasErrors)
+                if (!startupInfo.HasErrors)
                 {
                     // set culture info
-                    if (langEn)
-                    {
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                    }
-                    else
-                    {
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("id-ID");
-                    }
+                    Thread.CurrentThread.CurrentUICulture = startupInfo.IsEnglishCulture ? new CultureInfo("en-US") : new CultureInfo("id-ID");
 
                     // prepare message pump
                     _msgPump = new MessagePumpManager();
                     _msgPump.AddMsgFilter(new ShowWindowMsgFilter());
                     _msgPump.AddMsgFilter(new NotifyBaloonMsgFilter());
 
-                    _msgPump.StartWndProcHandler();
                     _msgPump.AddWndProcFilter(new QuickFixMsgFilter());
+                    _msgPump.StartWndProcHandler();
 
                     // prepare application context 
                     _appContext = new KcavContext();
                     _appContext.InitTrayIcon();
 
                     // is startup?
-                    if (!isStartup)
+                    if (!startupInfo.IsStartup)
                     { 
                         _appContext.ShowMainForm();
                     }
@@ -100,9 +96,9 @@ namespace KIRSmartAV
                     MessageBox.Show("Command-line contains invalid switch. Exiting...", "Command-line error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
 
-                // release mutex and terminate
+                // release Mutex and terminate
                 _mutex.ReleaseMutex();
-                _logger.Info("Message loop terminated and mutex was released.");
+                _logger.Debug("Mutex released.");
             }
             else
             {
@@ -110,14 +106,22 @@ namespace KIRSmartAV
                 NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.KCAV_SHOWME, IntPtr.Zero, IntPtr.Zero);
                 _logger.Info("Posting WM_SHOWME broadcast message to all window handle.");
             }
+
             _logger.Debug("Application terminated.");
         }
 
-        private static bool ParseCommandLine(string[] cmdArgs, out bool enLang, out bool startup)
+        private static AppStartupInfo ParseCommandLine(string[] cmdArgs)
         {
-            bool hasErrors = false;
-            enLang = false;
-            startup = false;
+            // init defaults
+            var info = new AppStartupInfo()
+            {
+                HasErrors = false,
+                IsEnglishCulture = true,
+                IsStartup = false,
+            };
+
+            // check culture info
+            info.IsEnglishCulture = (_settings.UILanguage == "Indonesia" ? false : true);
 
             // command-line switches
             foreach (string argument in cmdArgs)
@@ -126,29 +130,29 @@ namespace KIRSmartAV
                 if (argNomalized == "/startup")
                 {
                     // startup
-                    startup = true;
+                    info.IsStartup = true;
                     _logger.Info("Startup mode initiated.");
                 }
                 else if (argNomalized == "/lang-id")
                 {
                     // language ID
-                    enLang = false;
+                    info.IsEnglishCulture = false;
                     _logger.Info("Override culture info to Indonesia.");
                 }
                 else if (argNomalized == "/lang-en")
                 {
                     // language EN
-                    enLang = true;
+                    info.IsEnglishCulture = true;
                     _logger.Info("Override culture info to English US.");
                 }
                 else
                 {
                     // invalid switch
-                    hasErrors = true;
+                    info.IsEnglishCulture = true;
                 }
             }
 
-            return hasErrors;
+            return info;
         }
     }
 }
