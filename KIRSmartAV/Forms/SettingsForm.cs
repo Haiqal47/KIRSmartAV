@@ -51,7 +51,7 @@ namespace KIRSmartAV.Forms
         private void CheckStatus()
         {
             // Startup
-            using (var regKey = Registry.CurrentUser.OpenSubKey(AioHelpers.StartupRegistryPath, true))
+            using (var regKey = Registry.CurrentUser.OpenSubKey(Commons.StartupRegistryPath, true))
             {
                 var regValue = regKey.GetValue("KIRSmartAV");
                 chkRunOnStartup.Checked = ((regValue != null) && (regValue.ToString() != ""));
@@ -87,7 +87,7 @@ namespace KIRSmartAV.Forms
             {
                 try
                 {
-                    using (var regKey = Registry.CurrentUser.OpenSubKey(AioHelpers.StartupRegistryPath, true))
+                    using (var regKey = Registry.CurrentUser.OpenSubKey(Commons.StartupRegistryPath, true))
                     {
                         if (chkRunOnStartup.Checked)
                         {

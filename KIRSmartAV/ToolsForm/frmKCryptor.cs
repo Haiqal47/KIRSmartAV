@@ -65,8 +65,8 @@ namespace KIRSmartAV.ToolsForms
         #region Encode Parts
         private void cmdInputEncode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ofd.DefaultExt = AioHelpers.InputAnyFileMask;
-            ofd.Filter = "All files (*.*)|" + AioHelpers.InputAnyFileMask;
+            ofd.DefaultExt = Commons.InputAnyFileMask;
+            ofd.Filter = "All files (*.*)|" + Commons.InputAnyFileMask;
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -83,7 +83,7 @@ namespace KIRSmartAV.ToolsForms
             }
 
             // multidotted format : *.<ext>.<vExt>
-            var newExt = "*" + Path.GetExtension(txtInputEncode.Text) + "." + AioHelpers.VirusExtension;
+            var newExt = "*" + Path.GetExtension(txtInputEncode.Text) + "." + Commons.VirusExtension;
             sfd.DefaultExt = newExt;
             sfd.Filter = string.Format("Encrypted ({0})|{0}", newExt);
 
@@ -97,8 +97,8 @@ namespace KIRSmartAV.ToolsForms
         #region Decode Parts
         private void cmdDecodeInput_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ofd.DefaultExt = AioHelpers.InputMultidottedMask;
-            ofd.Filter = "Encrypted (" + AioHelpers.InputMultidottedMask + ")|" + AioHelpers.InputMultidottedMask;
+            ofd.DefaultExt = Commons.InputMultidottedMask;
+            ofd.Filter = "Encrypted (" + Commons.InputMultidottedMask + ")|" + Commons.InputMultidottedMask;
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -114,7 +114,7 @@ namespace KIRSmartAV.ToolsForms
                 return;
             }
 
-            var newExt = "*" + Regex.Match(txtInputDecode.Text, @"\..*").Value.Replace("." + AioHelpers.VirusExtension, "");
+            var newExt = "*" + Regex.Match(txtInputDecode.Text, @"\..*").Value.Replace("." + Commons.VirusExtension, "");
             sfd.DefaultExt = newExt;
             sfd.Filter = string.Format("Decrypted ({0})|{0}", newExt);
 

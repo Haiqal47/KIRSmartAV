@@ -50,7 +50,7 @@ namespace KIRSmartAV.ToolsForms
             public string VirusName { get; set; }
         }
         
-        private void ReportProgress(object sender, int progressPercentage, string statusText, string path = AioHelpers.TextDots, string virusName = AioHelpers.TextDots)
+        private void ReportProgress(object sender, int progressPercentage, string statusText, string path = Commons.TextDots, string virusName = Commons.TextDots)
         {
             var msgReport = new MessageParams()
             {
@@ -130,7 +130,7 @@ namespace KIRSmartAV.ToolsForms
                     return;
                 }
 
-                if (!currentFile.Name.EndsWith(AioHelpers.VirusExtension))
+                if (!currentFile.Name.EndsWith(Commons.VirusExtension))
                 {
                     scanFileList.Add(currentFile.FullPath);
                 }
@@ -149,7 +149,7 @@ namespace KIRSmartAV.ToolsForms
                     // load database
                     ReportProgress(sender, 99, strings.ScanPrepareDatabase);
                     _logger.Info("Loading database...");
-                    scanEngine.LoadCvdFile(AioHelpers.DatabasePath);
+                    scanEngine.LoadCvdFile(Commons.DatabasePath);
 
                     // compile database
                     ReportProgress(sender, 99, strings.ScanCompileEngine);
@@ -210,7 +210,7 @@ namespace KIRSmartAV.ToolsForms
             lblFile.Text = msgs.ObjectScanned;
 
             // Add to lv
-            if (msgs.VirusName != AioHelpers.TextDots)
+            if (msgs.VirusName != Commons.TextDots)
             {
                 lblVirname.Text = msgs.VirusName;
 
@@ -223,8 +223,8 @@ namespace KIRSmartAV.ToolsForms
 
         private void bwPindai_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         { 
-            lblFile.Text = AioHelpers.TextDots;
-            lblFilePath.Text = AioHelpers.TextDots;
+            lblFile.Text = Commons.TextDots;
+            lblFilePath.Text = Commons.TextDots;
 
             cmdStopScan.Enabled = false;
             cmdStartScan.Enabled = true;
@@ -259,6 +259,7 @@ namespace KIRSmartAV.ToolsForms
             // prepare variables
             var itemsCount = Convert.ToInt32(e.Argument);
             var crpytoService = new FileEncoder();
+            var chestPath = Commons.GetChestFolder();
 
             for (int i = 0; i < itemsCount; i++)
             {
@@ -269,7 +270,7 @@ namespace KIRSmartAV.ToolsForms
                 // encode first
                 try
                 {
-                    crpytoService.EncryptFile(filePath, AioHelpers.GenerateChestFilePath(filePath));
+                    crpytoService.EncryptFile(filePath, Commons.GenerateFilePath(filePath, chestPath));
                     imgIndex = 1;
                 }
                 catch (Exception ex)

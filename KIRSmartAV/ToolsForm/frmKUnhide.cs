@@ -56,7 +56,7 @@ namespace KIRSmartAV.ToolsForms
             FileAttributes attrNew = FileAttributes.Normal;
 
             // check if given name is reserved as hidden
-            foreach (string reservedName in AioHelpers.ReservedNames)
+            foreach (string reservedName in Commons.ReservedNames)
             {
                 if (normalizedFileName == reservedName)
                 {
@@ -182,8 +182,8 @@ namespace KIRSmartAV.ToolsForms
             try
             {
                 // rename folder
-                FastIO.MoveFile(hiddenPath, Path.Combine(args.DriveLetter, AioHelpers.KCrecoveredName), false);
-                _logger.Debug("Rename no-name directory to " + AioHelpers.KCrecoveredName);
+                FastIO.MoveFile(hiddenPath, Path.Combine(args.DriveLetter, Commons.KCrecoveredName), false);
+                _logger.Debug("Rename no-name directory to " + Commons.KCrecoveredName);
             }
             catch (Exception ex)
             {

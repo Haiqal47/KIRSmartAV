@@ -59,7 +59,7 @@ namespace KIRSmartAV.Forms
                 MClamSlim.ClamEngine.Initialize();
 
                 _logger.Debug("Counting signatures.");
-                lblStat_Database.Text = MClamSlim.AVHelpers.CountSignatures(AioHelpers.DatabasePath).ToString();
+                lblStat_Database.Text = MClamSlim.AVHelpers.CountSignatures(Commons.DatabasePath).ToString();
                 _antivirusCapability = true;
             }
             catch (Exception ex)
