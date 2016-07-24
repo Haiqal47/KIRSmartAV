@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
 
 namespace KIRSmartAV.ApplicationServices
@@ -34,6 +35,20 @@ namespace KIRSmartAV.ApplicationServices
             var tempMethod = tempTrace.GetFrame(1).GetMethod();
 
             return new LogManager(tempMethod.ReflectedType.Name);
+        }
+
+        public static void ConfigureLogger()
+        {
+            // configure
+            Trace.AutoFlush = true;            
+            Trace.Listeners.Clear();
+
+            // create daily log
+            var currentFilePath = DateTime.Now.ToString(Commons.ShortDateFormat) + ".txt";
+            var fullPath = Path.Combine(Commons.GetAppDataPath(), currentFilePath);
+            
+            // add trace listener
+            Trace.Listeners.Add(new TextWriterTraceListener(fullPath, "MainLogger"));
         }
 
         public LogManager(string className)
@@ -73,7 +88,7 @@ namespace KIRSmartAV.ApplicationServices
 
         private void WriteEntry(string message, string level)
         {
-            Trace.WriteLine(string.Format(AioHelpers.LogFormatString, DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"), level, _logClass, message));
+            Trace.WriteLine(string.Format(Commons.LogFormatString, DateTime.Now.ToString(Commons.LongDateFormat), level, _logClass, message));
         }
     }
 }
