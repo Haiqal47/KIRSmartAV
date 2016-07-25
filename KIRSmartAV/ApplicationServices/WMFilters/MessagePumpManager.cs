@@ -31,24 +31,14 @@ namespace KIRSmartAV.ApplicationServices.MsgFilters
     class MessagePumpManager : IDisposable
     {
         private static LogManager _logger = LogManager.GetClassLogger();
-        private static MessagePumpManager _currentContext = null;
 
         private List<IMessageFilter> _msgFilters = null;
         private WndProcWatcher _internalForm = null;
         private bool _watching = false;
 
-        public static MessagePumpManager Instance
-        {
-            get { return _currentContext; }
-        }
-
         // constructor
         public MessagePumpManager()
         {
-            // prepare singleton
-            if (_currentContext == null)
-                _currentContext = this;
-
             // set up filter collection
             _msgFilters = new List<IMessageFilter>();
             

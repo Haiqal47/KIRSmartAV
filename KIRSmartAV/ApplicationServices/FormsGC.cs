@@ -24,25 +24,31 @@ using System.Windows.Forms;
 
 namespace KIRSmartAV.ApplicationServices
 {
-    public class FormsGC
+    public class FormsGC : IDisposable
     {
         private List<Form> _currentViews = null;
         private static LogManager _logger = LogManager.GetClassLogger();
-        private static FormsGC _default = new FormsGC();
+        private static FormsGC _default = null;
 
-        public static FormsGC Default
+        public static FormsGC Instance
         {
             get { return _default; }
+        }
+
+        // constructor
+        public FormsGC()
+        {
+            // singleton
+            if (_default == null)
+                _default = this;
+
+            // prepare views
+            _currentViews = new List<Form>();
         }
 
         public bool HasShownForm
         {
             get { return _currentViews.Count > 0; }
-        }
-
-        private FormsGC()
-        {
-            _currentViews = new List<Form>();
         }
 
         public void ShowForm(Form frm)
@@ -69,5 +75,35 @@ namespace KIRSmartAV.ApplicationServices
                 _logger.Debug("Disposing opened form. \"" + currentForm.GetType().Name + "\"");
             }
         }
+
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue && disposing)
+            {
+                if (_currentViews != null && _currentViews.Count > 0)
+                {
+                    // close all loaded forms
+                    foreach (Form frm in _currentViews)
+                    {
+                        frm.Close();
+                    }
+
+                    // clear all remaining items
+                    _currentViews.Clear();
+                }
+            }
+
+            disposedValue = true;
+        }
+
+        // This code added to correctly implement the disposable pattern.
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+        #endregion
     }
 }

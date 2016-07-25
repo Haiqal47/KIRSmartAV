@@ -35,7 +35,7 @@ namespace KIRSmartAV.Forms
         private static LogManager _logger = LogManager.GetClassLogger();
         private static Settings _appSettings = Settings.Default;
 
-        private FormsGC _formsHandler = FormsGC.Default;
+        private FormsGC _formsHandler = FormsGC.Instance;
         private bool _antivirusCapability = true;
 
         public MainForm()

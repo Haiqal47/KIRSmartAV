@@ -39,6 +39,7 @@ namespace KIRSmartAV
 
         private static Mutex _mutex = new Mutex(true, "KIRSmartAVSingleInstance");
         private static KcavContext _appContext = null;
+        private static FormsGC _formsGC = null;
         private static MessagePumpManager _msgPump = null;
 
         private static LogManager _logger = LogManager.GetClassLogger();
@@ -59,6 +60,9 @@ namespace KIRSmartAV
 
                 // configure logger class
                 LogManager.ConfigureLogger();
+
+                // redirect exit events
+                Application.ApplicationExit += KCAV_ApplicationExit;
                 
                 // parse command line
                 AppStartupInfo startupInfo = ParseCommandLine(args);
@@ -87,6 +91,9 @@ namespace KIRSmartAV
                         _appContext.ShowMainForm();
                     }
 
+                    // initialize forms GC
+                    _formsGC = new FormsGC();
+
                     // start message loop
                     Application.Run(_appContext);
                 }
@@ -108,6 +115,17 @@ namespace KIRSmartAV
             }
 
             _logger.Debug("Application terminated.");
+        }
+
+        private static void KCAV_ApplicationExit(object sender, EventArgs e)
+        {
+            // dispose MessagePump
+            _msgPump.Dispose();
+
+            // dispose FormsGC
+            _formsGC.Dispose();
+
+            Application.ApplicationExit -= KCAV_ApplicationExit;
         }
 
         private static AppStartupInfo ParseCommandLine(string[] cmdArgs)
