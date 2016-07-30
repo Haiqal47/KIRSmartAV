@@ -66,7 +66,7 @@ namespace KIRSmartAV.Forms
             txtVirusChestDir.Text = _settings.ChestPath;
 
             // Language
-            cboLanguage.SelectedIndex = _settings.UILanguage == "Indonesia" ? 0 : 1;
+            cboLanguage.SelectedIndex = (_settings.UILanguage == "Indonesia" ? 0 : 1);
         }
 
         private void SaveChanges()

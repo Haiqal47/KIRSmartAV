@@ -59,7 +59,9 @@ namespace KIRSmartAV.ToolsForms
                 Status = statusText,
                 VirusName = virusName,
             };
-            (sender as BackgroundWorker).ReportProgress(progressPercentage, msgReport);
+
+            var bw = (BackgroundWorker)sender;
+            bw.ReportProgress(progressPercentage, msgReport);
         }
         #endregion
 
@@ -90,6 +92,7 @@ namespace KIRSmartAV.ToolsForms
                 bwPerbaiki.RunWorkerAsync(lvDeteksi.Items.Count);
                 _logger.Info("User starts a repair action.");
             }
+
             cmdBrowse.Enabled = false;
             cmdStartScan.Enabled = false;
             cmdStopScan.Enabled = true;
@@ -120,7 +123,7 @@ namespace KIRSmartAV.ToolsForms
             
             // iterate to count
             ReportProgress(sender, 99, strings.ScanCountText);
-            _logger.Info("Preparing to count files. Directory: " + scanPath);
+            _logger.Debug("Preparing to count files. Directory: " + scanPath);
             foreach (FileData currentFile in FastIO.EnumerateFiles(scanPath, SearchOption.AllDirectories))
             {
                 // check for cancellation
@@ -138,7 +141,7 @@ namespace KIRSmartAV.ToolsForms
 
             // initialize libclamav
             ReportProgress(sender, 99, strings.ScanPrepareClamav);
-            _logger.Info("Count completen. Total: " + scanFileList.Count.ToString());
+            _logger.Debug("Count completed. Total: " + scanFileList.Count.ToString());
             
             try
             {
@@ -148,12 +151,12 @@ namespace KIRSmartAV.ToolsForms
                 {
                     // load database
                     ReportProgress(sender, 99, strings.ScanPrepareDatabase);
-                    _logger.Info("Loading database...");
+                    _logger.Debug("Loading database...");
                     scanEngine.LoadCvdFile(Commons.DatabasePath);
 
                     // compile database
                     ReportProgress(sender, 99, strings.ScanCompileEngine);
-                    _logger.Info("Loading database...");
+                    _logger.Debug("Compiling engine...");
                     scanEngine.Compile();
 
                     // scan
@@ -176,7 +179,7 @@ namespace KIRSmartAV.ToolsForms
                             if (scanResult.IsVirus)
                             {
                                 ReportProgress(sender, Convert.ToInt32(progressPercentage), strings.ScanVirusDetected, scanResult.FullPath, scanResult.VirusName);
-                                _logger.Info("Virus detected. Name: " + scanResult.VirusName + ", Path: " + scanResult.FullPath);
+                                _logger.Debug("Virus detected. Name: " + scanResult.VirusName + ", Path: " + scanResult.FullPath);
                             }
                             else
                             {
@@ -184,7 +187,7 @@ namespace KIRSmartAV.ToolsForms
                             }
                         } //End using FileEntry
                     } //End for loop
-                    _logger.Debug("Scan finished. Disposing engine.");
+                    _logger.Debug("Scan completed. Disposing engine.");
                 } //End using ClamEngine
             }
             catch (Exception ex)

@@ -35,13 +35,17 @@ namespace KIRSmartAV.Forms
         private static LogManager _logger = LogManager.GetClassLogger();
         private static Settings _appSettings = Settings.Default;
 
-        private FormsGC _formsHandler = FormsGC.Instance;
+        private FormsGC _formsHandler = null;
         private bool _antivirusCapability = true;
 
         public MainForm()
         {
             InitializeComponent();
+
+            _formsHandler = new FormsGC();
         }
+
+
 
         #region Methods
         private void CheckStatus()
@@ -104,9 +108,11 @@ namespace KIRSmartAV.Forms
         #region Buttons
         private void cmdAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            _logger.Info("Showing \"AboutForm\"");
+            _logger.Debug("Showing \"AboutForm\"");
             using (var vw = new AboutForm())
+            {
                 vw.ShowDialog();
+            }
         }
 
         private void cmdSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -116,11 +122,11 @@ namespace KIRSmartAV.Forms
                 MessageBox.Show(strings.CantShowSettings, strings.KIRSmartAVTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            else
+
+            _logger.Debug("Showing \"SettingsForm\"");
+            using (var vw = new SettingsForm())
             {
-                _logger.Info("Showing \"SettingsForm\"");
-                using (var vw = new SettingsForm())
-                    vw.ShowDialog();
+                vw.ShowDialog();
             }
         }
 
@@ -155,14 +161,15 @@ namespace KIRSmartAV.Forms
             switch (selectedTool.ImageIndex)
             {
                 case 0:
-                    if (_antivirusCapability)
+                    if (!_antivirusCapability)
                     {
-                        _formsHandler.ShowForm(new frmKClamAV());
+                        MessageBox.Show(strings.LibclamavError, strings.KIRSmartAVTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        _logger.Debug("SettingsForm opening canceled. There is opened form.");
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show(strings.LibclamavError, strings.KIRSmartAVTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return;
+                        _formsHandler.ShowForm(new frmKClamAV());
                     }
                     break;
 
@@ -178,7 +185,7 @@ namespace KIRSmartAV.Forms
                     if (!isElevated)
                     {
                         MessageBox.Show(strings.ErrorNotElevatedText, strings.ErrorNotElevatedTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        _logger.Info("Form showing cancelled. Process not elevated.");
+                        _logger.Debug("KProtect opening cancelled. Process not elevated.");
                         return;
                     }
                     else
@@ -193,8 +200,7 @@ namespace KIRSmartAV.Forms
             }
 
             this.Hide();
-
-            _logger.Info("Showing \"" + selectedTool.Text + "\" form.");
+            _logger.Debug("Showing \"" + selectedTool.Text + "\" form.");
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -218,5 +224,20 @@ namespace KIRSmartAV.Forms
             }
         }
         #endregion
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            _formsHandler.Dispose();
+
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

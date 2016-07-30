@@ -68,11 +68,11 @@
   <ItemGroup>
     <Compile Include="ApplicationServices\Commons.cs" />
     <Compile Include="ApplicationServices\FormsGC.cs" />
-    <Compile Include="ApplicationServices\WMFilters\MessagePumpManager.cs" />
+    <Compile Include="ApplicationServices\MsgFilters\MessagePumpManager.cs" />
     <Compile Include="ApplicationServices\LogManager.cs" />
-    <Compile Include="ApplicationServices\WMFilters\NotifyBaloonMsgFilter.cs" />
-    <Compile Include="ApplicationServices\WMFilters\ShowWindowMsgFilter.cs" />
-    <Compile Include="ApplicationServices\WMFilters\WndProcWatcher.cs" />
+    <Compile Include="ApplicationServices\MsgFilters\NotifyBaloonMsgFilter.cs" />
+    <Compile Include="ApplicationServices\MsgFilters\ShowWindowMsgFilter.cs" />
+    <Compile Include="ApplicationServices\MsgFilters\WndProcWatcher.cs" />
     <Compile Include="imageResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,7 +135,7 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationServices\WMFilters\QuickFixMsgFilter.cs" />
+    <Compile Include="ApplicationServices\MsgFilters\QuickFixMsgFilter.cs" />
     <EmbeddedResource Include="Forms\AboutForm.id-ID.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
