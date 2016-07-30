@@ -28,20 +28,10 @@ namespace KIRSmartAV.ApplicationServices
     {
         private List<Form> _currentViews = null;
         private static LogManager _logger = LogManager.GetClassLogger();
-        private static FormsGC _default = null;
-
-        public static FormsGC Instance
-        {
-            get { return _default; }
-        }
 
         // constructor
         public FormsGC()
         {
-            // singleton
-            if (_default == null)
-                _default = this;
-
             // prepare views
             _currentViews = new List<Form>();
         }
