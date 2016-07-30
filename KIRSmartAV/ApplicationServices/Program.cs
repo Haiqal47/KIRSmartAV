@@ -39,7 +39,6 @@ namespace KIRSmartAV
 
         private static Mutex _mutex = new Mutex(true, "KIRSmartAVSingleInstance");
         private static KcavContext _appContext = null;
-        private static FormsGC _formsGC = null;
         private static MessagePumpManager _msgPump = null;
 
         private static LogManager _logger = LogManager.GetClassLogger();
@@ -51,7 +50,6 @@ namespace KIRSmartAV
         [STAThread]
         static void Main(string[] args)
         {
-            _logger.Debug("Application started.");
             if (_mutex.WaitOne(TimeSpan.FromMilliseconds(500), true))
             {
                 // enable visual styles
@@ -60,6 +58,7 @@ namespace KIRSmartAV
 
                 // configure logger class
                 LogManager.ConfigureLogger();
+                _logger.Debug("Application started.");
 
                 // redirect exit events
                 Application.ApplicationExit += KCAV_ApplicationExit;
@@ -73,6 +72,10 @@ namespace KIRSmartAV
                     // set culture info
                     Thread.CurrentThread.CurrentUICulture = startupInfo.IsEnglishCulture ? new CultureInfo("en-US") : new CultureInfo("id-ID");
 
+                    // prepare application context 
+                    _appContext = new KcavContext();
+                    _appContext.InitTrayIcon();
+
                     // prepare message pump
                     _msgPump = new MessagePumpManager();
                     _msgPump.AddMsgFilter(new ShowWindowMsgFilter());
@@ -81,18 +84,11 @@ namespace KIRSmartAV
                     _msgPump.AddWndProcFilter(new QuickFixMsgFilter());
                     _msgPump.StartWndProcHandler();
 
-                    // prepare application context 
-                    _appContext = new KcavContext();
-                    _appContext.InitTrayIcon();
-
                     // is startup?
                     if (!startupInfo.IsStartup)
                     { 
                         _appContext.ShowMainForm();
                     }
-
-                    // initialize forms GC
-                    _formsGC = new FormsGC();
 
                     // start message loop
                     Application.Run(_appContext);
@@ -122,8 +118,8 @@ namespace KIRSmartAV
             // dispose MessagePump
             _msgPump.Dispose();
 
-            // dispose FormsGC
-            _formsGC.Dispose();
+            // log
+            _logger.Debug("Message Pump disposed.");
 
             Application.ApplicationExit -= KCAV_ApplicationExit;
         }
@@ -149,19 +145,19 @@ namespace KIRSmartAV
                 {
                     // startup
                     info.IsStartup = true;
-                    _logger.Info("Startup mode initiated.");
+                    _logger.Debug("Startup mode initiated.");
                 }
                 else if (argNomalized == "/lang-id")
                 {
                     // language ID
                     info.IsEnglishCulture = false;
-                    _logger.Info("Override culture info to Indonesia.");
+                    _logger.Debug("Override culture info to Indonesia.");
                 }
                 else if (argNomalized == "/lang-en")
                 {
                     // language EN
                     info.IsEnglishCulture = true;
-                    _logger.Info("Override culture info to English US.");
+                    _logger.Debug("Override culture info to English US.");
                 }
                 else
                 {
