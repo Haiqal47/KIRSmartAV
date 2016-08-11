@@ -117,6 +117,9 @@ namespace KIRSmartAV.ToolsForms
         private void bwPindai_DoWork(object sender, DoWorkEventArgs e)
         {
             // prepare
+            var timeCounter = new System.Diagnostics.Stopwatch();
+            timeCounter.Start();
+
             var scanPath = e.Argument.ToString();
             var scanFileList = new List<string>();
             double progressPercentage = 0.0;
@@ -127,7 +130,7 @@ namespace KIRSmartAV.ToolsForms
             foreach (FileData currentFile in FastIO.EnumerateFiles(scanPath, SearchOption.AllDirectories))
             {
                 // check for cancellation
-                if (bwPerbaiki.CancellationPending)
+                if (bwPindai.CancellationPending)
                 {
                     e.Cancel = true;
                     return;
@@ -154,6 +157,13 @@ namespace KIRSmartAV.ToolsForms
                     _logger.Debug("Loading database...");
                     scanEngine.LoadCvdFile(Commons.DatabasePath);
 
+                    // check for cancellation
+                    if (bwPindai.CancellationPending)
+                    {
+                        e.Cancel = true;
+                        return;
+                    }
+
                     // compile database
                     ReportProgress(sender, 99, strings.ScanCompileEngine);
                     _logger.Debug("Compiling engine...");
@@ -164,7 +174,7 @@ namespace KIRSmartAV.ToolsForms
                     for (int i = 0; i < fileCount; i++)
                     {
                         // check for cancellation
-                        if (bwPerbaiki.CancellationPending)
+                        if (bwPindai.CancellationPending)
                         {
                             e.Cancel = true;
                             return;
@@ -195,6 +205,9 @@ namespace KIRSmartAV.ToolsForms
                 _logger.Error("Libclamav encoutered an error.", ex);
                 MessageBox.Show(strings.ScanEngineError, strings.KIRSmartAVTitle, MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+
+            timeCounter.Stop();
+            _logger.Debug("Scan time elapsed: " + timeCounter.ElapsedMilliseconds.ToString());
         }
 
         private void bwPindai_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -240,7 +253,7 @@ namespace KIRSmartAV.ToolsForms
                 cmdStartScan.ImageIndex = 2;
 
                 cmdBrowse.Enabled = false;
-                _logger.Info("Scan completed. Some viruses detected.");
+                _logger.Info("Scan completed. Virus found: " + lvDeteksi.Items.Count.ToString());
             }
             else
             {
@@ -269,6 +282,13 @@ namespace KIRSmartAV.ToolsForms
                 var currentItem = lvDeteksi.SafeGetItem(i);
                 var filePath = currentItem[2];
                 int imgIndex = 2;
+
+                // check for cancellation
+                if (bwPerbaiki.CancellationPending)
+                {
+                    e.Cancel = true;
+                    return;
+                }
 
                 // encode first
                 try

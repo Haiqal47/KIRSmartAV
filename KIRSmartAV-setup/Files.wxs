@@ -97,7 +97,7 @@
       </Component>
     </DirectoryRef>
     
-    <DirectoryRef Id="APPLICATIONDATADIRECTORY">
+    <DirectoryRef Id="DATABASEDIRECTORY">
       <!-- Define database directory -->
       <Component Id="DatabaseUpdates" Guid="78E04752-72F5-4DD4-A087-2A820B34FF26">
         <File Id="bytecode.cvd" DiskId="1" Source="files\database\bytecode.cvd" Checksum="yes" />
@@ -105,7 +105,7 @@
         <File Id="main.cvd" DiskId="1" Source="files\database\main.cvd" Checksum="yes" />
 
         <!-- Define uninstallation actions -->
-        <RemoveFolder Id="AppDataFolder" On="uninstall"/>
+        <RemoveFolder Id="CommonAppDataFolder" On="uninstall"/>
         <RegistryValue Root="HKCU" Key="Software\KIRSmartAV" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
       </Component>
     </DirectoryRef>

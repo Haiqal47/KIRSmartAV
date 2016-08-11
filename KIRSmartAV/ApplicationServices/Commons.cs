@@ -96,7 +96,7 @@ namespace KIRSmartAV.ApplicationServices
 
         public static string GetAppDataPath()
         {
-            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
             var completeDir = Path.Combine(basePath, "KcavData");
             if (!Directory.Exists(completeDir))
             {
