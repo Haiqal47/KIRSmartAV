@@ -58,7 +58,8 @@ namespace MClamSlim.Native
 
         internal const int CL_SCAN_STDOPT = CL_SCAN_MAIL | CL_SCAN_OLE2 | CL_SCAN_HEURISTIC_PRECEDENCE |
                                           CL_SCAN_PDF | CL_SCAN_HTML | CL_SCAN_PE | CL_SCAN_ALGORITHMIC |
-                                          CL_SCAN_ELF | CL_SCAN_SWF;
+                                          CL_SCAN_ELF | CL_SCAN_SWF | CL_SCAN_ARCHIVE | CL_SCAN_BLOCKBROKEN |
+                                          CL_SCAN_BLOCKENCRYPTED | CL_SCAN_BLOCKMACROS;
         #endregion
 
         #region Database Options Constant
@@ -83,7 +84,8 @@ namespace MClamSlim.Native
         internal const int CL_DB_YARA_EXCLUDE = 1048576;
         internal const int CL_DB_YARA_ONLY = 2097152;
 
-        internal const int CL_DB_STDOPT = CL_DB_PHISHING | CL_DB_PHISHING_URLS | CL_DB_BYTECODE;
+        internal const int CL_DB_STDOPT = CL_DB_PHISHING | CL_DB_PHISHING_URLS |
+                                          CL_DB_BYTECODE | CL_DB_PUA;
         #endregion
     }
 }
